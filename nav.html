@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Responsive Menu</title>
+    <Style>
+        /* Add this CSS to your existing styles.css or in a separate file */
+/* Add this CSS to your existing styles.css or in a separate file */
+/* ===== Colours ===== */
+:root {
+    --body-color: #FFFFFF;
+    --nav-color: #4070F4;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+}
+
+body.dark {
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+}
+
+nav {
+    margin-top: 1.7rem;
+    position: sticky;
+    height: 0px;
+    width: 90vw;
+    border-radius: 5rem;
+    background-color: #9B6FA6;
+    z-index: 100;
+    position: absolute;
+    top: 22vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+body.dark nav {
+    border: 1px solid #393838;
+}
+
+nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #9B6FA6;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Updated */
+}
+
+nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: block; /* Updated */
+}
+
+nav .nav-bar .logo a {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    display: inline-block; /* Updated */
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column; /* Updated */
+    gap: 2rem;
+}
+
+.nav-links.show {
+    display: none; /* Updated */
+}
+
+.nav-links li {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.nav-links li a {
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-links li a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before {
+    opacity: 1;
+}
+
+@media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.show {
+        display: flex; /* Updated */
+        flex-direction: column; /* Updated */
+        position: fixed; /* Updated */
+        top: 0; /* Updated */
+        left: 0; /* Updated */
+        height: 100vh; /* Updated */
+        width: 100vw; /* Updated */
+        background-color: #9B6FA6; /* Updated */
+        padding-top: 50px; /* Updated */
+        gap: 1rem; /* Updated */
+    }
+
+    .nav-links li a {
+        margin: 0;
+    }
+}
+
+
+    </Style>
+</head>
+
+<body>
+    <div class="divcontentnopad">
+
+        <div class="divlogo">
+            <img style="width: 140px;" src="images/Redditch Smilecare logo FULL SIZE.png" alt="Dentist near me">
+        </div>
+
+        <div class="divcontact">
+            <span class="mobilehide tablethide"><a href="tel:020-8858-1055">015 2763 049</a> | <a
+                    href="mailto:info@greenwichdental.uk">Send us an email</a> | <a
+                    href="contact-greenwich-dental-practice.html#enquiry">Book an appointment</a></span>
+        </div>
+
+        <!-- Main Nav -->
+        <nav>
+            <div class="nav-bar">
+                <i class='bx bx-menu sidebarOpen'></i>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+                    <li><a href="emergency-dentist-greenwich.html">Treatments</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="contact-greenwich-dental-practice.html">Contact us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <script>
+        const navBar = document.querySelector(".nav-bar");
+        const sidebarOpen = document.querySelector(".sidebarOpen");
+        const navLinks = document.querySelector(".nav-links");
+
+        sidebarOpen.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+</body>
+
+</html>

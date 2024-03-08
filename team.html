@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <style>
+        /* ===== Google Font Import - Poppins ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.4s ease;
+            ;
+        }
+
+        body {
+
+            background-color: var(--body-color);
+        }
+
+
+        /* ===== Colours ===== */
+        :root {
+            --body-color: #FFFFFF;
+            --nav-color: #4070F4;
+            --side-nav: #010718;
+            --text-color: #FFF;
+            --search-bar: #F2F2F2;
+            --search-text: #010718;
+        }
+
+
+
+        body.dark {
+            --body-color: #18191A;
+            --nav-color: #242526;
+            --side-nav: #242526;
+            --text-color: #CCC;
+            --search-bar: #242526;
+        }
+
+        nav {
+
+            margin-top: 1.7rem;
+            position: sticky;
+            height: 50px;
+            width: 90vw;
+
+            border-radius: 5rem;
+            background-color: #9B6FA6;
+            z-index: 100;
+            position: absolute;
+            top: 22vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        body.dark nav {
+            border: 1px solid #393838;
+
+        }
+
+        nav .nav-bar {
+            position: relative;
+            height: 100%;
+
+            max-width: 1000px;
+            width: 100%;
+            background-color: #9B6FA6;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        nav .nav-bar .sidebarOpen {
+            color: var(--text-color);
+            font-size: 25px;
+            padding: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav .nav-bar .logo a {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+
+        .menu .logo-toggle {
+            display: none;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-bar .nav-links li {
+            margin: 0 5px;
+
+            list-style: none;
+        }
+
+        .nav-links li a {
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .nav-links li a::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background-color: var(--text-color);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li:hover a::before {
+            opacity: 1;
+        }
+
+        .nav-bar .darkLight-searchBox {
+            display: flex;
+            align-items: center;
+        }
+
+        .darkLight-searchBox .dark-light,
+        .darkLight-searchBox .searchToggle {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+        }
+
+        .dark-light i,
+        .searchToggle i {
+            position: absolute;
+            color: var(--text-color);
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dark-light i.sun {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .dark-light.active i.sun {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .dark-light.active i.moon {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .searchToggle i.cancel {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .searchToggle.active i.cancel {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .searchToggle.active i.search {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .searchBox {
+            position: relative;
+        }
+
+
+
+
+
+        body.dark .search-field input {
+            color: var(--text-color);
+        }
+
+        .search-field i {
+            position: absolute;
+            color: var(--nav-color);
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        body.dark .search-field i {
+            color: var(--text-color);
+        }
+
+        @media (max-width: 790px) {
+            nav .nav-bar .sidebarOpen {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                height: 100%;
+                width: 320px;
+
+                left: -126%;
+                top: 0;
+                padding: 20px;
+                background-color: var(--side-nav);
+                z-index: 100;
+                transition: all 0.4s ease;
+            }
+
+            nav.active .menu {
+                left: -10%;
+            }
+
+            nav.active .nav-bar .logo a {
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .menu .logo-toggle {
+                display: block;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .logo-toggle .siderbarClose {
+                color: var(--text-color);
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .nav-bar .nav-links {
+                flex-direction: column;
+                background-color: #18191A;
+                padding-top: 30px;
+            }
+
+            .nav-links li a {
+                display: block;
+                margin-top: 20px;
+            }
+        }
+    </style>
+
+
+    <div class="divcontact">
+        <span class="desktophide tabletshow"><a href="tel:020-8858-1055">Call</a> | <a
+                href="mailto:info@greenwichdental.uk">Email</a> | <a
+                href="contact-greenwich-dental-practice.html#enquiry">Appointments</a></span>
+    </div>
+
+    <header>
+        <div class="divcontentnopad">
+
+            <div class="divlogo">
+                <img style="width: 150px;" src="images/Redditch Smilecare logo FULL SIZE.png"
+                    alt="Greenwich Orthodontic Practice">
+            </div>
+
+            <div class="divcontact">
+                <span class="mobilehide tablethide"><a href="tel:020-8858-1055">020 8858 1055</a> | <a
+                        href="mailto:info@greenwichdental.uk">Send us an email</a> | <a
+                        href="contact-greenwich-dental-practice.html#enquiry">Book an appointment</a></span>
+            </div>
+    </header>
+    <!-- Main Nav -->
+
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
+
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Redditch</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">Our Team</a></li>
+
+
+
+                    <li> <a href="emergency-dentist-greenwich.html">Treatments</a></li>
+
+                    <li> <a href="privacy.html">Privacy Policy</a></li>
+                    <li> <a href="contact-greenwich-dental-practice.html">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="searchBox">
+                <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <!-- <i class='bx bx-search search'></i> -->
+                </div>
+                <!-- <div class="search-field">
+            <input type="text" placeholder="Search...">
+            <i class='bx bx-search'></i> -->
+            </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+
+
+    <section class="max-w-screen-xl mx-auto py-20 px-8 lg:px-10 my-[11rem] ">
+        <h2 class="text-4xl xl:text-5xl capitalize text-center text-indigo-900 font-bold">our team</h2>
+        <hr class="mx-auto w-12 h-1 outline-0 border-0 bg-green-300 block mt-4 mb-6">
+        <p class="text-center text-xl text-gray-800">Our team consists only of the best talents</p>
+
+        <div class="flex flex-col gap-6 mt-16">
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="w-full lg:w-1/4 rounded-3xl overflow-hidden">
+                    <img src="images/profile_pic-new1.png" alt="Jasmine Chopra"
+                        class=" w-full h-full object-cover aspect-video lg:aspect-square">
+                </div>
+                <div class="w-full lg:w-9/12 bg-purple-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+                    <h3 class="text-2xl capitalize text-indigo-900 font-semibold">Dr Jasmine Chopra</h3>
+                    <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5"> Our dental
+                        care team is expertly led by the principal dentist <span class="font-medium text-[1.4rem]">Dr
+                            Jasmine Chopra </span>(GDC 241881) BDS, MFDS RCS Ed ( 2014) , PG Cert Operative
+                        Dentistry (2020)</span>
+                    <p class="text-indigo-900 opacity-75 leading-normal" style="font-family: 'Poppins' serif;"> <span
+                            class="text-[1.2rem] font-serif">Jasmine</span> has over 15 years of extensive experience in
+                        Dentistry. Jasmine qualified for Faculty of Dental Surgeons Royal College of Surgeons of
+                        Edinburgh in 2014 and has completed the Post Graduate Certification in Operative Dentistry from
+                        King’s College, London in 2020. Jasmine joined the Practice in 2017 and took over as Principal
+                        Dentist of Redditch Smile Care in 2024 . Jasmine enjoys all aspects of Dentistry with special
+                        interest in Composite bonding, Root Canal Treatments and constructing cosmetic dentures. When
+                        not at work, Jasmine loves to paint on canvas and is a regular at doing Yoga.</p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row-reverse gap-6">
+                <div class="w-full lg:w-1/4 rounded-3xl overflow-hidden">
+                    <img src="images/profile_pic1.webp" alt="Erin Calzoni"
+                        class=" w-full h-[100&] object-cover aspect-video lg:aspect-auto">
+                </div>
+                <div class="w-full lg:w-9/12 bg-blue-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+                    <h3 class="text-2xl capitalize text-indigo-900 font-semibold">Dr Sindhu Nair</h3>
+                    <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5">BDS,MJDFRCS,
+                        MSc in Aesthetic Dentistry(KCL),GDC(84867) </span>
+                    <p class="text-indigo-900 opacity-75 leading-normal"> <span
+                            class="text-[1.2rem] font-serif">Sindhu</span> graduated in 2001 and has got special
+                        interest in cosmetic aspects of dentistry. Sindhu prefers treating nervous children and adults
+                        using non-sedative behaviour management techniques. Sindhu has been an invisalign provider since
+                        2009 and offers multiple aspects of smile change including composite bonding, veneers, crowns,
+                        whitening treatments and facial aesthetics.
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="w-full lg:w-1/4 rounded-3xl overflow-hidden">
+                    <img src="images/ceria.jpg" alt="" class="w-full h-full object-center aspect-video lg:aspect-auto">
+                </div>
+                <div class="w-full lg:w-9/12 bg-green-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+                    <h3 class="text-2xl capitalize text-indigo-900 font-semibold">Dr Cerene Maria Joy</h3>
+                    <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5">
+                        Dental Therapist</span>
+                    <p class="text-indigo-900 opacity-75 leading-normal"> Joined Redditch Smile Care in February 2024
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="flex flex-col md:flex-row-reverse gap-6">
+            <div class="w-full lg:w-1/4 rounded-3xl overflow-hidden">
+              <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" class="w-full h-full object-cover aspect-video lg:aspect-square">
+            </div>
+            <div class="w-full lg:w-9/12 bg-green-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+              <h3 class="text-2xl capitalize text-indigo-900 font-semibold">christina meyer</h3>
+              <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5">psychologist</span>
+              <p class="text-indigo-900 opacity-75 leading-normal">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam saepe sint expedita suscipit nemo nihil cupiditate culpa temporibus, facere nisi.</p>
+            </div>
+          </div> -->
+        </div>
+    </section>
+    <div class="" style="height: 60vh;margin-top: -14rem;width: 100%;">
+        <h2 class="text-4xl xl:text-4xl capitalize text-center text-indigo-900 font-semibold">Practice Staff</h2>
+
+        <div class="flex justify-evenly my-10">
+
+            <div class="w-full lg:w-[20%] bg-purple-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+                <h3 class="text-2xl capitalize text-indigo-900 font-semibold">Brogan Geraghty</h3>
+                <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5">
+                    Practice Manage</span>
+                <!-- <p class="text-indigo-900 opacity-75 leading-normal"> Joined Redditch Smile Care in February 2024</p> -->
+            </div>
+
+            <div class="w-full lg:w-[20%] bg-purple-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+                <h3 class="text-2xl capitalize text-indigo-900 font-semibold">Charlotte</h3>
+                <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5">
+                    Practice Coordinator
+                </span>
+                <!-- <p class="text-indigo-900 opacity-75 leading-normal"> Joined Redditch Smile Care in February 2024</p> -->
+
+            </div>
+            <div class="w-full lg:w-[20%] bg-purple-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+                <h3 class="text-2xl capitalize text-indigo-900 font-semibold">Alice Baller</h3>
+                <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5">
+                    Lead Dental Nurse
+                </span>
+                <!-- <p class="text-indigo-900 opacity-75 leading-normal"> Joined Redditch Smile Care in February 2024</p> -->
+
+            </div>
+            <div class="w-full lg:w-[20%] bg-purple-100 rounded-3xl flex flex-col justify-center p-8 lg:p-14">
+                <h3 class="text-2xl capitalize text-indigo-900 font-semibold">Natalie Zindani</h3>
+                <span class="inline-block capitalize text-xl text-indigo-900 font-light mt-1.5 mb-5">
+                    Dental Nurse</span>
+                <!-- <p class="text-indigo-900 opacity-75 leading-normal"> Joined Redditch Smile Care in February 2024</p> -->
+
+            </div>
+        </div>
+    </div>
+    <!-- ASSOCIATIONS -->
+    <div class="divcontainer">
+        <div class="divcontentnopad txtcenter clearfix">
+
+            <div class="associations">
+                <img src="images/logos/nhs-logo.jpg" alt="NHS dentist near me Logo" width="70" height="auto">
+                <img src="images/logos/cqc-logo.jpg" alt="CQC Logo" width="105" height="auto">
+                <!-- <img src="images/logos/bda-logo.jpg" alt="BDA Logo" width="65" height="auto"> -->
+                <img src="images/logos/gdc-logo.jpg" alt="GDC Logo" width="140" height="auto">
+                <!-- <img src="images/logos/bos-logo.jpg" alt="BOS Logo" width="70" height="auto">
+                <img src="images/logos/enlighten-logo.jpg" alt="Enlighten logo" width="95" height="auto">
+                <img src="images/logos/invisalign-logo.jpg" alt="Invisalign logo" width="135" height="auto">
+                <img src="images/logos/tabeo-logo.jpg" alt="Tabeo Logo" width="110" height="auto"> -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO3jZLozsODYTwKhiagOO-e4slnGgo8rBKIg&usqp=CAU"
+                    width="105" height="auto" alt="32co">
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="divcontainer brownbg">
+            <div class="divcontentnopad clearfix">
+
+                <div class="divider"></div>
+
+                <div class="one-fourth">
+                    <h2>Site Map</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="team.html">About</a></li>
+                        <li><a href="emergency-dentist-greenwich.html">Dental Treatments</a></li>
+           
+                  
+                        <li><a href="greenwich-dentist-nhs-fees.html">NHS Fees</a></li>
+                        <li><a href="greenwich-dentist-private-fees.html">Private Fees</a></li>
+                        <li><a href="review.html">Patient Reviews</a></li>
+                        <li><a href="contact-greenwich-dental-practice.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="one-fourth">
+                    <h2>Useful Information</h2>
+                    <ul>
+                      
+                        <li><a href="privacy.html">Privacy Policies</a></li>
+                        <li><a href="complaint.html">Complaints Procedures</a></li>
+                       
+    
+                       
+                    </ul>
+                </div>
+
+                <div class="one-fourth">
+                    <h2>Where to find us</h2>
+
+                    <!-- <iframe
+                       src="https://maps.app.goo.gl/x2QBD5fHy5sQ1kt36"
+                        width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2439.5837400553264!2d-1.9485613000000002!3d52.30540930000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870c1f9291e5f79%3A0xd12eed34fc62bb09!2sRedditch%20Smile%20Care!5e0!3m2!1sen!2sin!4v1709538795014!5m2!1sen!2sin"
+                        width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="one-fourth column-last">
+                    <h2>Get in touch</h2>
+                    <ul>
+                        <li>Redditch B97 4RH</li>
+                        <li>53 Bromsgrove Road</li>
+
+                    </ul>
+
+                    <ul>
+                        <li><span>T</span> <a href="tel: 015 2763 049"> 015 2763 049</a></li>
+                        <li><span>E</span> <a href="mailto:info@redditchsmilecare.co.uk">Email us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="credits">
+                <script> document.include('include-credits.html');</script>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

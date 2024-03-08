@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+    <style>
+        /* ===== Google Font Import - Poppins ===== */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.4s ease;
+            ;
+        }
+
+        body {
+
+            background-color: var(--body-color);
+        }
+
+
+        /* ===== Colours ===== */
+        :root {
+            --body-color: #FFFFFF;
+            --nav-color: #4070F4;
+            --side-nav: #010718;
+            --text-color: #FFF;
+            --search-bar: #F2F2F2;
+            --search-text: #010718;
+        }
+
+
+
+        body.dark {
+            --body-color: #18191A;
+            --nav-color: #242526;
+            --side-nav: #242526;
+            --text-color: #CCC;
+            --search-bar: #242526;
+        }
+
+        nav {
+
+            margin-top: 1.7rem;
+            position: sticky;
+            height: 50px;
+            width: 90vw;
+
+            border-radius: 5rem;
+            background-color: #9B6FA6;
+            z-index: 100;
+            position: absolute;
+            top: 22vh;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+        body.dark nav {
+            border: 1px solid #393838;
+
+        }
+
+        nav .nav-bar {
+            position: relative;
+            height: 100%;
+
+            max-width: 1000px;
+            width: 100%;
+            background-color: #9B6FA6;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        nav .nav-bar .sidebarOpen {
+            color: var(--text-color);
+            font-size: 25px;
+            padding: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        nav .nav-bar .logo a {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+
+        .menu .logo-toggle {
+            display: none;
+        }
+
+        .nav-bar .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-bar .nav-links li {
+            margin: 0 5px;
+
+            list-style: none;
+        }
+
+        .nav-links li a {
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        .nav-links li a::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            height: 6px;
+            width: 6px;
+            border-radius: 50%;
+            background-color: var(--text-color);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li:hover a::before {
+            opacity: 1;
+        }
+
+        .nav-bar .darkLight-searchBox {
+            display: flex;
+            align-items: center;
+        }
+
+        .darkLight-searchBox .dark-light,
+        .darkLight-searchBox .searchToggle {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+        }
+
+        .dark-light i,
+        .searchToggle i {
+            position: absolute;
+            color: var(--text-color);
+            font-size: 22px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dark-light i.sun {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .dark-light.active i.sun {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .dark-light.active i.moon {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .searchToggle i.cancel {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .searchToggle.active i.cancel {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .searchToggle.active i.search {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .searchBox {
+            position: relative;
+        }
+
+
+
+
+
+        body.dark .search-field input {
+            color: var(--text-color);
+        }
+
+        .search-field i {
+            position: absolute;
+            color: var(--nav-color);
+            right: 15px;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        body.dark .search-field i {
+            color: var(--text-color);
+        }
+
+        @media (max-width: 790px) {
+            nav .nav-bar .sidebarOpen {
+                display: block;
+            }
+
+            .menu {
+                position: fixed;
+                height: 100%;
+                width: 320px;
+
+                left: -126%;
+                top: 0;
+                padding: 20px;
+                background-color: var(--side-nav);
+                z-index: 100;
+                transition: all 0.4s ease;
+            }
+
+            nav.active .menu {
+                left: -10%;
+            }
+
+            nav.active .nav-bar .logo a {
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            .menu .logo-toggle {
+                display: block;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .logo-toggle .siderbarClose {
+                color: var(--text-color);
+                font-size: 24px;
+                cursor: pointer;
+            }
+
+            .nav-bar .nav-links {
+                flex-direction: column;
+                background-color: #18191A;
+                padding-top: 30px;
+            }
+
+            .nav-links li a {
+                display: block;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body >
+    <header style="margin-bottom: 5rem;">
+        <div class="divcontentnopad">
+
+            <div class="divlogo">
+                <img style="width: 140px;" src="images/Redditch Smilecare logo FULL SIZE.png" alt="Dentist near me">
+            </div>
+
+            <div class="divcontact">
+                <span class="mobilehide tablethide"><a href="tel:020-8858-1055">015 2763 049</a> | <a
+                        href="mailto:info@greenwichdental.uk">Send us an email</a> | <a
+                        href="contact-greenwich-dental-practice.html#enquiry">Book an appointment</a></span>
+            </div>
+
+            <!-- Main Nav -->
+
+            <nav>
+                <div class="nav-bar">
+                    <i class='bx bx-menu sidebarOpen'></i>
+
+                    <div class="menu">
+                        <div class="logo-toggle">
+                            <span class="logo"><a href="#">Redditch</a></span>
+                            <i class='bx bx-x siderbarClose'></i>
+                        </div>
+                        <ul class="nav-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+
+
+
+                            <li> <a href="emergency-dentist-greenwich.html">Treatments</a></li>
+
+                            <li> <a href="privacy.html">Privacy Policy</a></li>
+                            <li> <a href="contact-greenwich-dental-practice.html">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="searchBox">
+                        <div class="searchToggle">
+                            <i class='bx bx-x cancel'></i>
+                            <!-- <i class='bx bx-search search'></i> -->
+                        </div>
+                        <!-- <div class="search-field">
+                    <input type="text" placeholder="Search...">
+                    <i class='bx bx-search'></i> -->
+                    </div>
+                </div>
+        </div>
+        </div>
+        </nav>
+        <!-- navbar javascript start here -->
+        
+        <!-- javascript code nav end  -->
+        <!-- <script> document.include('include-navigation.html');</script> -->
+
+        </div>
+    </header>
+    <div class="">
+    <h1 class="text-[2.6rem] text-center my-6">Patient Complaints Procedure</h1>
+    
+    <div class="flex flex-col gap-8">
+
+  
+    <p class="w-[80%] mx-auto text-[17px]">It is our aim to always have satisfied patients, to meet your expectations of care and service and to resolve any complaints as efficiently, effectively and politely as possible. We take complaints very seriously, we investigate them in a full and fair way and take great care to protect your confidentiality. We learn from complaints to improve our care and service. We will never discriminate against patients who have made a complaint.</p>
+    <p class="w-[80%] mx-auto text-[17px]">If you are not entirely satisfied with any aspect of our care or service please let us know as soon as possible to allow us to address your concerns promptly.</p>
+<p class="w-[80%] mx-auto text-[17px]">If you do not feel you can raise a complaint about your NHS service directly with us, you can address your complaint directly to <span><a href="https://www.england.nhs.uk/contact-us/">england.contactus@nhs.net.</a> </span> </p>
+<p class="w-[80%] mx-auto text-[17px]">Our Practice Manager will be your personal contact to assist you with any complaints. If your verbal complaint is not resolved to your satisfaction within 48 hours or if you complain in writing, the Complaints Manager will acknowledge it in writing within 3 working days and will aim to provide a full response in writing within 20 working days.</p>
+
+
+<p class="w-[80%] mx-auto text-[17px]">If the Complaints Manager is unavailable, we will take brief details about the complaint and will arrange for a meeting when the person is next available. We will keep comprehensive and confidential records of your complaint, which will be stored securely and only be accessible only by those who need to know about your complaint.</p>
+
+<p class="w-[80%] mx-auto text-[17px]">If the complaint investigation takes longer than anticipated the Complaints Manager will keep you informed of the reason for the delay, the progress of the investigation and the proposed date it will be completed.</p>
+
+<p class="w-[80%] mx-auto text-[17px]">When the investigation has been completed, you will be informed of its outcome in writing and invited to a meeting to discuss the results and any practical solutions that we can offer to you. These solutions could include replacing treatment, refunding fees paid, referring you for specialist treatments or other solutions that meet your needs and resolve the complaint</p>
+<p class="w-[80%] mx-auto text-[17px] py-9">We regularly analyse patient complaints to learn from them and to improve our services. That's why we always welcome your feedback, comments, suggestions and complaints. If you are dissatisfied with our response to a complaint you can take it further, please see the contacts below.</p>
+
+</div>
+</div>
+
+  <!-- ASSOCIATIONS -->
+  <div class="divcontainer">
+    <div class="divcontentnopad txtcenter clearfix">
+
+        <div class="associations">
+            <img src="images/logos/nhs-logo.jpg" alt="NHS dentist near me Logo" width="70" height="auto">
+            <img src="images/logos/cqc-logo.jpg" alt="CQC Logo" width="105" height="auto">
+            <!-- <img src="images/logos/bda-logo.jpg" alt="BDA Logo" width="65" height="auto"> -->
+            <img src="images/logos/gdc-logo.jpg" alt="GDC Logo" width="140" height="auto">
+            <!-- <img src="images/logos/bos-logo.jpg" alt="BOS Logo" width="70" height="auto">
+            <img src="images/logos/enlighten-logo.jpg" alt="Enlighten logo" width="95" height="auto">
+            <img src="images/logos/invisalign-logo.jpg" alt="Invisalign logo" width="135" height="auto">
+            <img src="images/logos/tabeo-logo.jpg" alt="Tabeo Logo" width="110" height="auto"> -->
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO3jZLozsODYTwKhiagOO-e4slnGgo8rBKIg&usqp=CAU" width="105" height="auto" alt="32co">
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <div class="divcontainer brownbg">
+        <div class="divcontentnopad clearfix">
+
+            <div class="divider"></div>
+            <div class="one-fourth">
+                <h2>Site Map</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">About</a></li>
+                    <li><a href="emergency-dentist-greenwich.html">Dental Treatments</a></li>
+       
+              
+                    <li><a href="greenwich-dentist-nhs-fees.html">NHS Fees</a></li>
+                    <li><a href="greenwich-dentist-private-fees.html">Private Fees</a></li>
+                    <li><a href="review.html">Patient Reviews</a></li>
+                    <li><a href="contact-greenwich-dental-practice.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="one-fourth">
+                <h2>Useful Information</h2>
+                <ul>
+                  
+                    <li><a href="privacy.html">Privacy Policies</a></li>
+                    <li><a href="complaint.html">Complaints Procedures</a></li>
+                   
+
+                   
+                </ul>
+            </div>
+
+            <div class="one-fourth">
+                <h2>Where to find us</h2>
+
+                <!-- <iframe
+                   src="https://maps.app.goo.gl/x2QBD5fHy5sQ1kt36"
+                    width="100%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2439.5837400553264!2d-1.9485613000000002!3d52.30540930000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870c1f9291e5f79%3A0xd12eed34fc62bb09!2sRedditch%20Smile%20Care!5e0!3m2!1sen!2sin!4v1709538795014!5m2!1sen!2sin"
+                     width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="one-fourth column-last">
+                <h2>Get in touch</h2>
+                <ul>
+                    <li>Redditch B97 4RH</li>
+                    <li>53 Bromsgrove Road</li>
+                   
+                </ul>
+
+                <ul>
+                    <li><span>T</span> <a href="tel: 015 2763 049"> 015 2763 049</a></li>
+                    <li><span>E</span> <a href="mailto:info@redditchsmilecare.co.uk">Email us</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="credits">
+            <script> document.include('include-credits.html');</script>
+        </div>
+    </div>
+
+</footer>
+</body>
+</html>

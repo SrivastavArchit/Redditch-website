@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a class="anchor" id="enquiry"></a>
+<!-- ENQUIRIES -->
+<div class=" whyus clearfix">
+    <a class="anchor" id="enquiry"></a>
+    
+    <div class="one-half extrapadtop txtcenter whitefade-bg">
+    <div class="divlogolrg">
+    <img width="100px" src="redditch-removebg-preview.png" alt="Greenwich Dental Practice Logo">
+    </div>
+    
+    <ul>
+    <li style="font-size: medium;">Same day Emergency appointments available for NHS and private patients</li>
+    <li style="font-size: medium;">Affordable private prices</li>
+    <li style="font-size: medium;">Highly experienced and professional team</li>
+    <li style="font-size: medium;">Extended opening times including Saturdays and late evenings during weekdays</li>
+    <li style="font-size: medium;">Convenient location in the town Centre  with onsite parking available</li>
+    <li style="font-size: medium;">Wheelchair access </li>
+    <li class="last">Convenient location</li>
+    </ul>
+    
+    <p><strong>Unfortunately we can't take on new NHS patients at the moment. We are working hard to clear our list, so please check back soon for an update.</strong></p>
+    
+    </div>
+<div class="one-half column-last">
+<script type="text/javascript">
+// SAFARI REQUIRED CHECK
+function checkForm() {
+    if ($('#policies').prop('checked') == false) {
+        alert("Please confirm you have read and agree to our policies. ");
+        return false;
+    }
+}
+</script>
+<div class="formwrap">
+<div class="form">
+
+<h2>Enquiries</h2>
+
+<form method='post' action='https://www.greenwichdental.uk/enquiry.php' onsubmit="return checkForm();">
+
+<input name="name" id="Name" maxlength="30" type="text" placeholder="Full Name*" required />
+<input name="phone" id="Phone" maxlength="20" type="text" placeholder="Contact No*" required />
+<input name="email" id="Email-Address" maxlength="50" type="text" placeholder="Email*" required />
+<textarea name="message" placeholder="How can we help?"></textarea>
+
+<input type="checkbox" id="policies" name="policies" value="Yes" required /> <p>I have <a href="privacy.html" target="_blank">read and agree</a> to your privacy policy</p>
+
+<input type="hidden" name="regtype" value="">
+<input type="submit" name="submit" value="SEND" class="send" />
+
+</form>
+</div>
+</div>
+
+</div>
+</body>
+</html>

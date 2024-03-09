@@ -7,353 +7,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="complaint.css">
     <style>
-        /* ===== Google Font Import - Poppins ===== */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-
-
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.4s ease;
-            ;
-        }
-
-        body {
-
-            background-color: var(--body-color);
-        }
-
-        .swiper{
-  width: 100%;
-}
-
-.swiper-wrapper{
-  width: 100%;
-  height: 35em;
-  display: flex;
-  align-items: center;
-}
-
-.card{
-  width: 20em;
-  height: 90%;
-  background-color: #fff;
-  border-radius: 2em;
-  box-shadow: 0 0 2em rgba(0, 0, 0, .2);
-  padding: 2em 1em;
-
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-
-  margin: 0 2em;
-}
-
-.swiper-slide:not(.swiper-slide-active){
-  filter: blur(1px);
-}
-
-.card__image{
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  border: 5px solid var(--color);
-  padding: 3px;
-  margin-bottom: 2em;
-}
-
-.card__image img{
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.card__content{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.card__title{
-  font-size: 1.5rem;
-  font-weight: 500;
-  position: relative;
-  top: .2em;
-}
-
-.card__name{
-  color: var(--color);
-}
-
-.card__text{
-  text-align: center;
-  font-size: 1.1rem;
-  margin: 1em 0;
-}
-
-.card__btn{
-  background-color: var(--color);
-  color: #fff;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  border: none;
-  padding: .5em;
-  border-radius: .5em;
-  margin-top: .5em;
-  cursor: pointer;
-}
-
-        /* ===== Colours ===== */
-        :root {
-            --body-color: #FFFFFF;
-            --nav-color: #4070F4;
-            --side-nav: #010718;
-            --text-color: #FFF;
-            --search-bar: #F2F2F2;
-            --search-text: #010718;
-        }
-
-
-
-        body.dark {
-            --body-color: #18191A;
-            --nav-color: #242526;
-            --side-nav: #242526;
-            --text-color: #CCC;
-            --search-bar: #242526;
-        }
-
-        nav {
-
-            margin-top: 1.7rem;
-            position: sticky;
-            height: 50px;
-            width: 90vw;
-
-            border-radius: 5rem;
-            background-color: #9B6FA6;
-            z-index: 100;
-            position: absolute;
-            top: 22vh;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-        }
-
-        body.dark nav {
-            border: 1px solid #393838;
-
-        }
-
-        nav .nav-bar {
-            position: relative;
-            height: 100%;
-
-            max-width: 1000px;
-            width: 100%;
-            background-color: #9B6FA6;
-            margin:  auto;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-
-        nav .nav-bar .sidebarOpen {
-            color: var(--text-color);
-            font-size: 25px;
-            padding: 5px;
-            cursor: pointer;
-            display: none;
-        }
-
-        nav .nav-bar .logo a {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-
-        .menu .logo-toggle {
-            display: none;
-        }
-
-        .nav-bar .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .nav-bar .nav-links li {
-            margin: 0 5px;
-margin-top: 1rem;
-            list-style: none;
-        }
-
-        .nav-links li a {
-            position: relative;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        .nav-links li a::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            height: 6px;
-            width: 6px;
-            border-radius: 50%;
-            background-color: var(--text-color);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links li:hover a::before {
-            opacity: 1;
-        }
-
-        .nav-bar .darkLight-searchBox {
-            display: flex;
-            align-items: center;
-        }
-
-        .darkLight-searchBox .dark-light,
-        .darkLight-searchBox .searchToggle {
-            height: 40px;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 5px;
-        }
-
-        .dark-light i,
-        .searchToggle i {
-            position: absolute;
-            color: var(--text-color);
-            font-size: 22px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dark-light i.sun {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .dark-light.active i.sun {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .dark-light.active i.moon {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchToggle i.cancel {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchToggle.active i.cancel {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .searchToggle.active i.search {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchBox {
-            position: relative;
-        }
-
-
-
-
-
-        body.dark .search-field input {
-            color: var(--text-color);
-        }
-
-        .search-field i {
-            position: absolute;
-            color: var(--nav-color);
-            right: 15px;
-            font-size: 22px;
-            cursor: pointer;
-        }
-
-        body.dark .search-field i {
-            color: var(--text-color);
-        }
+       
 
         @media (max-width: 790px) {
-            nav .nav-bar .sidebarOpen {
-                display: block;
-            }
-
-            .menu {
-                position: fixed;
-                height: 100%;
-                width: 320px;
-
-                left: -126%;
-                top: 0;
-                padding: 20px;
-                background-color: var(--side-nav);
-                z-index: 100;
-                transition: all 0.4s ease;
-            }
-
-            nav.active .menu {
-                left: -10%;
-            }
-
-            nav.active .nav-bar .logo a {
-                opacity: 0;
-                transition: all 0.3s ease;
-            }
-
-            .menu .logo-toggle {
-                display: block;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .logo-toggle .siderbarClose {
-                color: var(--text-color);
-                font-size: 24px;
-                cursor: pointer;
-            }
-
-            .nav-bar .nav-links {
-                flex-direction: column;
-                background-color: #18191A;
-                padding-top: 30px;
-            }
-
-            .nav-links li a {
-                display: block;
-                margin-top: 20px;
-            }
+           
         }
+    
         .boxx {
   background-color: rgb(255 255 255 / 30%);
   backdrop-filter: blur(10px);
@@ -382,7 +41,7 @@ background-position:center;
   border-radius: 5px;
   font-family: sans-serif;
   text-align: center;
-  max-width: 50%;
+
   max-height: 50%;
   padding: 20px 40px;
 }
@@ -390,7 +49,7 @@ background-position:center;
     </style>
 </head>
 <body>
-    
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
     <div class="divcontact">
         <span class="desktophide tabletshow"><a href="tel:020-8858-1055">Call</a> | <a
@@ -449,45 +108,8 @@ background-position:center;
         </div>
         </nav>
         <!-- navbar javascript start here -->
-        <script>
-            const body = document.querySelector("body"),
-                nav = document.querySelector("nav"),
-                modeToggle = document.querySelector(".dark-light"),
-                searchToggle = document.querySelector(".searchToggle"),
-                sidebarOpen = document.querySelector(".sidebarOpen"),
-                siderbarClose = document.querySelector(".siderbarClose");
-            let getMode = localStorage.getItem("mode");
-            if (getMode && getMode === "dark-mode") {
-                body.classList.add("dark");
-            }
-            // js code to toggle dark and light mode
-            modeToggle.addEventListener("click", () => {
-                modeToggle.classList.toggle("active");
-                body.classList.toggle("dark");
-                // js code to keep user selected mode even page refresh or file reopen
-                if (!body.classList.contains("dark")) {
-                    localStorage.setItem("mode", "light-mode");
-                } else {
-                    localStorage.setItem("mode", "dark-mode");
-                }
-            });
-            // js code to toggle search box
-            searchToggle.addEventListener("click", () => {
-                searchToggle.classList.toggle("active");
-            });
-
-
-            //   js code to toggle sidebar
-            sidebarOpen.addEventListener("click", () => {
-                nav.classList.add("active");
-            });
-            body.addEventListener("click", e => {
-                let clickedElm = e.target;
-                if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
-                    nav.classList.remove("active");
-                }
-            });
-        </script>
+      
+          
         <!-- javascript code nav end  -->
         <!-- <script> document.include('include-navigation.html');</script> -->
 
@@ -554,15 +176,15 @@ background-position:center;
             <div  class="formwrap">
                 <div style="margin:auto;margin-left: 1rem;height: 90vh;" class="form">
 
-                    <h2 style="margin-left: 8rem;">Feedback</h2>
+                    <h2 class="feedback" style="margin: 0 auto;padding-left: 2rem;">Feedback</h2>
 
-                    <form style=" height: 70vh; "action="https://formspree.io/f/mpzvryqy" method="POST" onsubmit="return checkForm();">
+                    <form style=" height: 70vh;margin-top: 3rem; "action="https://formspree.io/f/mpzvryqy" method="POST" onsubmit="return checkForm();">
 
-                        <input style="width: 33vw ;" name="name" id="Name" maxlength="30" type="text" placeholder="Full Name*" required />
-                        <input style="width: 33vw" name="phone" id="Phone" maxlength="20" type="text" placeholder="Contact No*" required />
-                        <input style="width: 33vw" name="email" id="Email-Address" maxlength="50" type="text" placeholder="Email*"
+                        <input style="width: 100% ;" name="name" id="Name" maxlength="30" type="text" placeholder="Full Name*" required />
+                        <input style="width: 100% " name="phone" id="Phone" maxlength="20" type="text" placeholder="Contact No*" required />
+                        <input style="width: 100% " name="email" id="Email-Address" maxlength="50" type="text" placeholder="Email*"
                             required />
-                        <textarea style="width: 33vw" name="message" placeholder="Your Feedback"></textarea>
+                        <textarea style="width: 100% " name="message" placeholder="Your Feedback"></textarea>
 
                         <input type="checkbox" id="policies" name="policies" value="Yes" required />
                         <p>I have <a href="privacy.html" target="_blank">read and agree</a> to your privacy policy</p>
@@ -573,7 +195,6 @@ background-position:center;
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
    
@@ -665,5 +286,6 @@ background-position:center;
     </div>
 
 </footer>
+<script src="js1/script.js"></script>
 </body>
 </html>

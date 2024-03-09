@@ -153,276 +153,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <style>
   /* ===== Google Font Import - Poppins ===== */
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-
-
-
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.4s ease;
-      ;
-  }
-
-  body {
-
-      background-color: var(--body-color);
-  }
-
-
-  /* ===== Colours ===== */
-  :root {
-      --body-color: #FFFFFF;
-      --nav-color: #4070F4;
-      --side-nav: #010718;
-      --text-color: #FFF;
-      --search-bar: #F2F2F2;
-      --search-text: #010718;
-  }
-
-
-
-  body.dark {
-      --body-color: #18191A;
-      --nav-color: #242526;
-      --side-nav: #242526;
-      --text-color: #CCC;
-      --search-bar: #242526;
-  }
-
-  nav {
-
-      margin-top: 1.7rem;
-      position: sticky;
-      height: 50px;
-      width: 90vw;
-
-      border-radius: 5rem;
-      background-color: #9B6FA6;
-      z-index: 100;
-      position: absolute;
-      top: 22vh;
-      left: 50%;
-      transform: translate(-50%, -50%);
-
-  }
-
-  body.dark nav {
-      border: 1px solid #393838;
-
-  }
-
-  nav .nav-bar {
-      position: relative;
-      height: 100%;
-
-      max-width: 1000px;
-      width: 100%;
-      background-color: #9B6FA6;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-  }
-
-  nav .nav-bar .sidebarOpen {
-      color: var(--text-color);
-      font-size: 25px;
-      padding: 5px;
-      cursor: pointer;
-      display: none;
-  }
-
-  nav .nav-bar .logo a {
-      font-size: 20px;
-      font-weight: 500;
-      color: var(--text-color);
-      text-decoration: none;
-  }
-
-
-  .menu .logo-toggle {
-      display: none;
-  }
-
-  .nav-bar .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-  }
-
-  .nav-bar .nav-links li {
-      margin: 0 5px;
-
-      list-style: none;
-  }
-
-  .nav-links li a {
-      position: relative;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 10px;
-  }
-
-  .nav-links li a::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      bottom: 0;
-      transform: translateX(-50%);
-      height: 6px;
-      width: 6px;
-      border-radius: 50%;
-      background-color: var(--text-color);
-      opacity: 0;
-      transition: all 0.3s ease;
-  }
-
-  .nav-links li:hover a::before {
-      opacity: 1;
-  }
-
-  .nav-bar .darkLight-searchBox {
-      display: flex;
-      align-items: center;
-  }
-
-  .darkLight-searchBox .dark-light,
-  .darkLight-searchBox .searchToggle {
-      height: 40px;
-      width: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 5px;
-  }
-
-  .dark-light i,
-  .searchToggle i {
-      position: absolute;
-      color: var(--text-color);
-      font-size: 22px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-  }
-
-  .dark-light i.sun {
-      opacity: 0;
-      pointer-events: none;
-  }
-
-  .dark-light.active i.sun {
-      opacity: 1;
-      pointer-events: auto;
-  }
-
-  .dark-light.active i.moon {
-      opacity: 0;
-      pointer-events: none;
-  }
-
-  .searchToggle i.cancel {
-      opacity: 0;
-      pointer-events: none;
-  }
-
-  .searchToggle.active i.cancel {
-      opacity: 1;
-      pointer-events: auto;
-  }
-
-  .searchToggle.active i.search {
-      opacity: 0;
-      pointer-events: none;
-  }
-
-  .searchBox {
-      position: relative;
-  }
-
-
-
-
-
-  body.dark .search-field input {
-      color: var(--text-color);
-  }
-
-  .search-field i {
-      position: absolute;
-      color: var(--nav-color);
-      right: 15px;
-      font-size: 22px;
-      cursor: pointer;
-  }
-
-  body.dark .search-field i {
-      color: var(--text-color);
-  }
-
+  
   @media (max-width: 790px) {
-      nav .nav-bar .sidebarOpen {
-          display: block;
-      }
-
-      .menu {
-          position: fixed;
-          height: 100%;
-          width: 320px;
-
-          left: -126%;
-          top: 0;
-          padding: 20px;
-          background-color: var(--side-nav);
-          z-index: 100;
-          transition: all 0.4s ease;
-      }
-
-      nav.active .menu {
-          left: -10%;
-      }
-
-      nav.active .nav-bar .logo a {
-          opacity: 0;
-          transition: all 0.3s ease;
-      }
-
-      .menu .logo-toggle {
-          display: block;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-      }
-
-      .logo-toggle .siderbarClose {
-          color: var(--text-color);
-          font-size: 24px;
-          cursor: pointer;
-      }
-
-      .nav-bar .nav-links {
-          flex-direction: column;
-          background-color: #18191A;
-          padding-top: 30px;
-      }
-
-      .nav-links li a {
-          display: block;
-          margin-top: 20px;
-      }
+     hgroup h1{
+        font-size: 1.6rem;
+     }
+     hgroup h2{
+        font-size: 1.3rem;
+     }
   }
 </style>
 </head>
 
 <body>
-
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JN4Q4X"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -450,80 +194,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Main Nav -->
 
       <nav>
-          <div class="nav-bar">
-              <i class='bx bx-menu sidebarOpen'></i>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen'></i>
 
-              <div class="menu">
-                  <div class="logo-toggle">
-                      <span class="logo"><a href="#">Redditch</a></span>
-                      <i class='bx bx-x siderbarClose'></i>
-                  </div>
-                  <ul class="nav-links">
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="team.html">Our Team</a></li>
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#">Redditch</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">Our Team</a></li>
 
 
 
-                      <li> <a href="emergency-dentist-greenwich.html">Treatments</a></li>
+                    <li> <a href="emergency-dentist-greenwich.html">Treatments</a></li>
 
-                      <li> <a href="privacy.html">Privacy Policy</a></li>
-                      <li> <a href="contact-greenwich-dental-practice.html">Contact us</a></li>
-                  </ul>
-              </div>
+                    <li> <a href="privacy.html">Privacy Policy</a></li>
+                    <li> <a href="contact-greenwich-dental-practice.html">Contact us</a></li>
+                </ul>
+            </div>
 
-              <div class="searchBox">
-                  <div class="searchToggle">
-                      <i class='bx bx-x cancel'></i>
-                      <!-- <i class='bx bx-search search'></i> -->
-                  </div>
-                  <!-- <div class="search-field">
-              <input type="text" placeholder="Search...">
-              <i class='bx bx-search'></i> -->
-              </div>
-          </div>
-  </div>
-  </div>
-  </nav>
+            <div class="searchBox">
+                <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <!-- <i class='bx bx-search search'></i> -->
+                </div>
+                <!-- <div class="search-field">
+            <input type="text" placeholder="Search...">
+            <i class='bx bx-search'></i> -->
+            </div>
+        </div>
+</div>
+</div>
+</nav>
   <!-- navbar javascript start here -->
-  <script>
-      const body = document.querySelector("body"),
-          nav = document.querySelector("nav"),
-          modeToggle = document.querySelector(".dark-light"),
-          searchToggle = document.querySelector(".searchToggle"),
-          sidebarOpen = document.querySelector(".sidebarOpen"),
-          siderbarClose = document.querySelector(".siderbarClose");
-      let getMode = localStorage.getItem("mode");
-      if (getMode && getMode === "dark-mode") {
-          body.classList.add("dark");
-      }
-      // js code to toggle dark and light mode
-      modeToggle.addEventListener("click", () => {
-          modeToggle.classList.toggle("active");
-          body.classList.toggle("dark");
-          // js code to keep user selected mode even page refresh or file reopen
-          if (!body.classList.contains("dark")) {
-              localStorage.setItem("mode", "light-mode");
-          } else {
-              localStorage.setItem("mode", "dark-mode");
-          }
-      });
-      // js code to toggle search box
-      searchToggle.addEventListener("click", () => {
-          searchToggle.classList.toggle("active");
-      });
-
-
-      //   js code to toggle sidebar
-      sidebarOpen.addEventListener("click", () => {
-          nav.classList.add("active");
-      });
-      body.addEventListener("click", e => {
-          let clickedElm = e.target;
-          if (!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")) {
-              nav.classList.remove("active");
-          }
-      });
-  </script>
+  
   <!-- javascript code nav end  -->
   <!-- <script> document.include('include-navigation.html');</script> -->
 
@@ -764,7 +470,7 @@ For more information or to book an appointment call us today on <a href="tel:020
 <!-- SMOOTH SCROLL -->
 <script>$(document).ready(function(){$('a[href^="#"]').on("click",function(n){n.preventDefault();var o=this.hash,t=$(o);$("html, body").animate({scrollTop:t.offset().top},900,"swing",function(){window.location.hash=o})})});</script>
 
-
+<script src="js1/script.js"></script>
 </body>
 
 <!-- Mirrored from www.greenwichdental.uk/greenwich-dentist-nhs-fees.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Jan 2024 13:04:34 GMT -->

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <style>
+
+@media (max-width: 790px){
+
+}
+    </style>
 </head>
 <body>
     <a class="anchor" id="enquiry"></a>
@@ -45,7 +51,7 @@ function checkForm() {
 
 <h2>Enquiries</h2>
 
-<form method='post' action='https://www.greenwichdental.uk/enquiry.php' onsubmit="return checkForm();">
+<form method='post' action="https://formspree.io/f/mpzvryqy" method="POST" onsubmit="return checkForm();">
 
 <input name="name" id="Name" maxlength="30" type="text" placeholder="Full Name*" required />
 <input name="phone" id="Phone" maxlength="20" type="text" placeholder="Contact No*" required />
@@ -62,5 +68,6 @@ function checkForm() {
 </div>
 
 </div>
+<script src="js1/script.js"></script>
 </body>
 </html>

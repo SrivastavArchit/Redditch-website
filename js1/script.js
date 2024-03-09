@@ -208,3 +208,29 @@
 
 //     /* end */
 // });
+
+nav = document.querySelector("nav"),
+navbar = document.querySelector(".nav-bar");
+menu = document.querySelector(".menu")
+modeToggle = document.querySelector(".dark-light"),
+searchToggle = document.querySelector(".searchToggle"),
+sidebarOpen = document.querySelector(".sidebarOpen"),
+sidebarClose = document.querySelector(".siderbarClose"); // Corrected typo
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark-mode") {
+body.classList.add("dark");
+}
+
+
+
+
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click", () => {
+nav.classList.add("active");
+document.querySelector(".menu").style.display = "block";
+});
+sidebarClose.addEventListener("click", () => { // Corrected typo
+nav.classList.remove("active");
+document.querySelector(".menu").style.display = "none";
+
+});

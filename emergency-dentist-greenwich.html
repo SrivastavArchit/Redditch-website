@@ -435,6 +435,11 @@
                 display: block;
                 margin-top: 20px;
             }
+ p{
+   width: 100%;
+   
+}
+
         }
     </style>
 
@@ -528,10 +533,10 @@
             <div style=" display: flex;flex-direction: column; justify-content: center;align-items:center;margin-top: 
   5rem;">
                 <h1
-                    style=" text-align: center;border-bottom: 3px solid rgb(28, 133, 190);width: 60%;margin: 4rem auto;margin-bottom: 1rem;">
+                    style=" text-align: center;border-bottom: 3px solid rgb(28, 133, 190);width: 60rem;margin: 4rem auto;margin-bottom: 1rem;">
                     Dental treatments and services at Redditch Smile Care </h1>
                 <h3 style="text-align: center;">Top quality dentistry in a modern, friendly clinic</h3>
-                <p style="font-weight: 500; width: 45%;margin: 1rem auto;">At Redditch Smile Care, we put our patients first and always
+                <p class="para" style=" @media (max-width: 790px){width: 90%;} font-weight: 500; width:50vw;margin: 1rem auto;">At Redditch Smile Care, we put our patients first and always
                     strive for the best possible outcome. We provide caring dentistry in a comfortable and friendly
                     environment, using only the best equipment and materials available. Our surgeries utilise the latest
                     technology including x-ray scanners.</p>
@@ -539,9 +544,9 @@
         </div>
         </section>
 
-            <div class="bannerbot"></div>
+            <!-- <div class="bannerbot"></div> -->
 
-            <div class="four-cards  flex justify-evenly"
+            <div class="four-cards w-full h-screen   flex flex-wrap justify-evenly "
                 style="display: flex;  margin-top: 19rem ; height: 80vh; width: 100%;justify-content: space-around;">
                 <div class="cardd w-1/4 flex flex-col justify-center  "
                     style="text-align: center;display: flex;flex-direction: column;align-items: center;width: 25%; ">
@@ -644,10 +649,12 @@ call us  on <a href="tel:020-8858-1055">020 8858 1055</a> or <a href="mailto:inf
 
 
     <!-- ASSOCIATIONS -->
-    <div class="divcontainer">
+    <div  class="divcontainer">
         <div class="divcontentnopad txtcenter clearfix">
 
-            <div class="associations">
+            <div class="associations" style="@media  screen and (max-width:730px) {
+                margin-top: 4rem;;
+            }">
                 <img src="images/logos/nhs-logo.jpg" alt="NHS dentist near me Logo" width="70" height="auto">
                 <img src="images/logos/cqc-logo.jpg" alt="CQC Logo" width="105" height="auto">
                 <!-- <img src="images/logos/bda-logo.jpg" alt="BDA Logo" width="65" height="auto"> -->

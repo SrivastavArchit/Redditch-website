@@ -420,6 +420,54 @@
                 display: block;
                 margin-top: 20px;
             }
+            .divcontentnopad{
+                display: flex;
+                flex-direction: column;
+            }
+            .one-fourth h2{
+                width: 100vw;
+            }
+            .one-half{
+                width: 100vw;
+            }
+            .divlogolrg img{
+                width: 50%;
+                margin-left: 16%;
+            }
+            .formwrap{
+                margin-bottom: 4rem;
+            }
+            .form h2{
+              
+                margin-right: 2rem;
+                margin-top: 10%;
+            }
+            form input{
+                width: 65vw;
+            }
+            .form form{
+                margin-top: 2rem;
+            }
+            .formwrap h2{
+                padding-top: 2rem;
+            }
+           .feedback{
+margin-left: 0;
+margin-top: 2rem;
+margin-right: 9rem;
+           }
+           textarea{
+            width: 64vw;
+           }
+           .formwrap input{
+            width: 65vw;
+           }
+           .form{
+            margin-top:3rem ;
+           }
+            .form input{
+                width: 65vw;
+            }
         }
     </style>
     <script id="Cookiebot" src="../consent.cookiebot.com/uc.js" data-cbid="85e47439-5866-4036-8a7b-217bd687343e"
@@ -854,15 +902,15 @@
             <div  class="formwrap">
                 <div style="margin:auto;margin-left: 1rem;height: 90vh;" class="form">
 
-                    <h2 style="margin-left: 8rem;">Feedback</h2>
+                    <h2 class="feedback" style="margin: 0 auto;padding-left: 2rem;">Feedback</h2>
 
-                    <form style=" height: 70vh; "action="https://formspree.io/f/mpzvryqy" method="POST" onsubmit="return checkForm();">
+                    <form style=" height: 70vh;margin-top: 3rem; "action="https://formspree.io/f/mpzvryqy" method="POST" onsubmit="return checkForm();">
 
-                        <input style="width: 33vw ;" name="name" id="Name" maxlength="30" type="text" placeholder="Full Name*" required />
-                        <input style="width: 33vw" name="phone" id="Phone" maxlength="20" type="text" placeholder="Contact No*" required />
-                        <input style="width: 33vw" name="email" id="Email-Address" maxlength="50" type="text" placeholder="Email*"
+                        <input style="width: 100% ;" name="name" id="Name" maxlength="30" type="text" placeholder="Full Name*" required />
+                        <input style="width: 100% " name="phone" id="Phone" maxlength="20" type="text" placeholder="Contact No*" required />
+                        <input style="width: 100% " name="email" id="Email-Address" maxlength="50" type="text" placeholder="Email*"
                             required />
-                        <textarea style="width: 33vw" name="message" placeholder="Your Feedback"></textarea>
+                        <textarea style="width: 100% " name="message" placeholder="Your Feedback"></textarea>
 
                         <input type="checkbox" id="policies" name="policies" value="Yes" required />
                         <p>I have <a href="privacy.html" target="_blank">read and agree</a> to your privacy policy</p>

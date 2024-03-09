@@ -436,6 +436,15 @@ html, body { font-size: 15px; }
 .extrapadtop { padding-top: 30px; }
 .divcontent p {
   padding-top: 2rem;
+
+}
+h1{
+  width: 0rem;
+}
+.para p{
+  width: 0rem;
+  padding: 0 0;
+  margin: 0 0 ;
 }
 .featured img{
   display: flex;

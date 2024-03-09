@@ -71,7 +71,13 @@
         })(window, document, 'script', 'dataLayer', 'GTM-5JN4Q4X');</script>
     <!-- End Google Tag Manager -->
     <style>
-        /* ===== Google Font Import - Poppins =====
+        .swiper-wrapper{
+  width: 100%;
+  height: 35em;
+  display: flex;
+  align-items: center;
+}
+         ===== Google Font Import - Poppins =====
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 
@@ -95,12 +101,7 @@
   width: 100%;
 }
 
-.swiper-wrapper{
-  width: 100%;
-  height: 35em;
-  display: flex;
-  align-items: center;
-}
+
 
 .card{
   width: 20em;
@@ -158,7 +159,7 @@
   text-align: center;
   font-size: 1.1rem;
   margin: 1em 0;
-}
+} 
 
 .card__btn{
   background-color: var(--color);
@@ -205,6 +206,7 @@
             z-index: 100;
             position: absolute;
             top: 22vh;
+            
             left: 50%;
             transform: translate(-50%, -50%);
 
@@ -225,6 +227,8 @@
             margin: 0 auto;
             padding: 0 20px;
             display: flex;
+          
+            border-radius: 4rem;
             align-items: center;
             justify-content: space-evenly;
         }
@@ -252,7 +256,8 @@
         .nav-bar .nav-links {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            /* gap: 2rem; */
+            border-radius: 0  0 3rem 3rem  ;
         }
 
         .nav-bar .nav-links li {
@@ -312,70 +317,31 @@
             transition: all 0.3s ease;
         }
 
-        .dark-light i.sun {
-            opacity: 0;
-            pointer-events: none;
-        }
+      
 
-        .dark-light.active i.sun {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .dark-light.active i.moon {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchToggle i.cancel {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchToggle.active i.cancel {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .searchToggle.active i.search {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchBox {
-            position: relative;
-        }
+      
 
 
 
 
+       
 
-        body.dark .search-field input {
-            color: var(--text-color);
-        }
-
-        .search-field i {
-            position: absolute;
-            color: var(--nav-color);
-            right: 15px;
-            font-size: 22px;
-            cursor: pointer;
-        }
-
-        body.dark .search-field i {
-            color: var(--text-color);
-        }
+      
+      
 
         @media (max-width: 790px) {
             nav .nav-bar .sidebarOpen {
                 display: block;
             }
-
-            .menu {
+           
+            nav{
+                margin-top: 9%;
+            }
+       .menu {
                 position: fixed;
                 height: 100%;
-                width: 320px;
-
+                width: 99vw;
+border-radius: 4rem;
                 left:-10%;
                 top: 0;
                 padding: 20px;
@@ -413,7 +379,7 @@
             .nav-bar .nav-links {
                 flex-direction: column;
                 background-color:#9B6FA6;
-                padding-top: 30px;
+                
             }
 
             .nav-links li a {
@@ -468,7 +434,14 @@ margin-right: 9rem;
             .form input{
                 width: 65vw;
             }
-        } */
+            .cd__main{
+                margin-top: 240vh;
+            }
+            .cd__main h1{
+                margin:0 auto;
+                width: 100%;
+            }
+        } 
     </style>
     <script id="Cookiebot" src="../consent.cookiebot.com/uc.js" data-cbid="85e47439-5866-4036-8a7b-217bd687343e"
         type="text/javascript" async></script>
@@ -639,7 +612,7 @@ margin-right: 9rem;
             <div class="divcontent clearfix">
                 <div class="divbannercontent  txtcenter">
                     <h2
-                        style="margin-top: 2rem; font-size: 3.1rem; color: #2c6f87;font-family: 'Poppins' 'sans-serif';font-style: normal;font-weight: bold;">
+                        style="margin-top: 2rem;  color: #2c6f87;font-family: 'Poppins' 'sans-serif';font-style: normal;font-weight: bold;">
                         NHS and Private Dentist in Redditch</h2>
                     <h3 style="margin-top: 3rem;margin-right: 3rem; color: #ffffff; font-family: 'Poppins' serif;font-weight: 600;">Experts
                         in Emergency, General, Cosmetic and Teeth straightening treatments</h3>

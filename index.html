@@ -256,7 +256,7 @@
         .nav-bar .nav-links {
             display: flex;
             align-items: center;
-            /* gap: 2rem; */
+            gap: 2rem;
             border-radius: 0  0 3rem 3rem  ;
         }
 
@@ -330,12 +330,14 @@
       
 
         @media (max-width: 790px) {
+
+
             nav .nav-bar .sidebarOpen {
                 display: block;
             }
            
             nav{
-                margin-top: 9%;
+                margin-top: -5rem;
             }
        .menu {
                 position: fixed;
@@ -379,7 +381,7 @@ border-radius: 4rem;
             .nav-bar .nav-links {
                 flex-direction: column;
                 background-color:#9B6FA6;
-                
+                gap: 0;
             }
 
             .nav-links li a {
@@ -443,6 +445,9 @@ margin-right: 9rem;
             }
             .associations{
                 margin-top: 0;
+            }
+            .divlogo img{
+                margin-top: -20vh;
             }
         } 
     </style>
@@ -554,7 +559,7 @@ margin-right: 9rem;
         <div class="divcontentnopad">
 
             <div class="divlogo">
-                <img style="width: 140px;" src="images/Redditch Smilecare logo FULL SIZE.png" alt="Dentist near me">
+                <img style="width: 150px;" src="images/Redditch Smilecare logo FULL SIZE.png" alt="Dentist near me">
             </div>
 
             <div class="divcontact">
@@ -1035,35 +1040,35 @@ margin-right: 9rem;
     <script>$(document).ready(function () { $('a[href^="#"]').on("click", function (n) { n.preventDefault(); var o = this.hash, t = $(o); $("html, body").animate({ scrollTop: t.offset().top }, 900, "swing", function () { window.location.hash = o }) }) });</script>
     <script src=" https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script>
-        const body = document.querySelector("body"),
-nav = document.querySelector("nav"),
-navbar = document.querySelector(".nav-bar");
-menu = document.querySelector(".menu")
-modeToggle = document.querySelector(".dark-light"),
-searchToggle = document.querySelector(".searchToggle"),
-sidebarOpen = document.querySelector(".sidebarOpen"),
-sidebarClose = document.querySelector(".siderbarClose"); // Corrected typo
-let getMode = localStorage.getItem("mode");
-if (getMode && getMode === "dark-mode") {
-body.classList.add("dark");
-}
+    <!-- <script>
+        const body = document.querySelector("body"), -->
+// nav = document.querySelector("nav"),
+// navbar = document.querySelector(".nav-bar");
+// menu = document.querySelector(".menu")
+// modeToggle = document.querySelector(".dark-light"),
+// searchToggle = document.querySelector(".searchToggle"),
+// sidebarOpen = document.querySelector(".sidebarOpen"),
+// sidebarClose = document.querySelector(".siderbarClose"); // Corrected typo
+// let getMode = localStorage.getItem("mode");
+// if (getMode && getMode === "dark-mode") {
+// body.classList.add("dark");
+// }
 
 
 
 
-//   js code to toggle sidebar
-sidebarOpen.addEventListener("click", () => {
-nav.classList.add("active");
-document.querySelector(".menu").style.display = "block";
-});
-sidebarClose.addEventListener("click", () => { // Corrected typo
-nav.classList.remove("active");
-document.querySelector(".menu").style.display = "none";
+// //   js code to toggle sidebar
+// sidebarOpen.addEventListener("click", () => {
+// nav.classList.add("active");
+// document.querySelector(".menu").style.display = "block";
+// });
+// sidebarClose.addEventListener("click", () => { // Corrected typo
+// nav.classList.remove("active");
+// document.querySelector(".menu").style.display = "none";
 
-});
+// });
 
-    </script>
+//     </script>
             
     <!-- Initialize Swiper -->
     <script>

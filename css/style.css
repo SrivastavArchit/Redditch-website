@@ -372,7 +372,10 @@ button { cursor: pointer; margin: 0; font-family: "museo-sans",sans-serif;font-w
 .full-width { width: 100%; }
 .column-last { margin-right: 0 !important; }
 
+.nav-bar .nav-links{
+    gap: 2rem;
 
+}
 @media only screen 
 and (min-width : 768px) 
 and (max-width : 1023px) {
@@ -413,6 +416,10 @@ and (max-width : 767px) {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-style: normal;
+
+}
+.nav-bar .nav-links{
+    gap: 0rem;
 
 }
 .cardd{
@@ -469,7 +476,7 @@ html, body { font-size: 15px; }
 }
 .divider { margin: 20px 0; } 
 
-header { min-height: 110px;; }
+header { min-height: 110px;height: 30vh; }
 header .divlogo { float: left; width: 100%; text-align: center; margin: 20px 0 40px; }
 header .divlogo IMG { width: 260px; height: auto; margin-left: -25px; }
 
@@ -477,6 +484,7 @@ header .divlogo IMG { width: 260px; height: auto; margin-left: -25px; }
 nav .nav-bar .sidebarOpen {
     display: block;
 }
+
 .box-menu{
     margin-left: 40vw;
 }
@@ -500,6 +508,10 @@ nav.active .menu {
 
 .nav-bar .nav-links .active{
     opacity: 0;
+    
+}
+nav{
+    margin-top: 0;
 }
 nav.active .nav-bar .logo a {
     opacity: 0;
@@ -544,6 +556,7 @@ nav.active .nav-bar .logo a {
     width: 50%;
     margin-left: 16%;
 }
+
 #banner { height: 420px; }
 .divbannercontent h2{
     font-size: 1.9rem;
@@ -931,6 +944,10 @@ body.dark .search-field i {
 }
 
 @media (max-width: 790px) {
+
+    .divlogo img{
+        margin-top: -20vh;
+    }
     nav .nav-bar .sidebarOpen {
         display: block;
     }

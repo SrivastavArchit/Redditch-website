@@ -168,7 +168,7 @@
     <script type='text/javascript'
         src='../platform-api.sharethis.com/js/sharethis.js#property=5f1ff0522b57b60012cafecb&product=sop'
         async='async'></script>
-    <!-- <style>
+    <style>
         /* ===== Google Font Import - Poppins ===== */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
@@ -201,7 +201,9 @@
             --search-text: #010718;
         }
 
-
+.dentaltreat h1{
+    
+}
 
         body.dark {
             --body-color: #18191A;
@@ -213,235 +215,273 @@
 
         nav {
 
-            margin-top: 1.7rem;
-            position: sticky;
-            height: 50px;
-            width: 90vw;
+margin-top: 1.7rem;
+position: sticky;
+height: 50px;
+width: 90vw;
 
-            border-radius: 5rem;
-            background-color: #9B6FA6;
-            z-index: 100;
-            position: absolute;
-            top: 22vh;
-            left: 50%;
-            transform: translate(-50%, -50%);
+border-radius: 5rem;
+background-color: #9B6FA6;
+z-index: 100;
+position: absolute;
+top: 22vh;
 
-        }
+left: 50%;
+transform: translate(-50%, -50%);
 
-        body.dark nav {
-            border: 1px solid #393838;
-
-        }
-
-        nav .nav-bar {
-            position: relative;
-            height: 100%;
-
-            max-width: 1000px;
-            width: 100%;
-            background-color: #9B6FA6;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-
-        nav .nav-bar .sidebarOpen {
-            color: var(--text-color);
-            font-size: 25px;
-            padding: 5px;
-            cursor: pointer;
-            display: none;
-        }
-
-        nav .nav-bar .logo a {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-
-        .menu .logo-toggle {
-            display: none;
-        }
-
-        .nav-bar .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .nav-bar .nav-links li {
-            margin: 0 5px;
-
-            list-style: none;
-        }
-
-        .nav-links li a {
-            position: relative;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        .nav-links li a::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            height: 6px;
-            width: 6px;
-            border-radius: 50%;
-            background-color: var(--text-color);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links li:hover a::before {
-            opacity: 1;
-        }
-
-        .nav-bar .darkLight-searchBox {
-            display: flex;
-            align-items: center;
-        }
-
-        .darkLight-searchBox .dark-light,
-        .darkLight-searchBox .searchToggle {
-            height: 40px;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 5px;
-        }
-
-        .dark-light i,
-        .searchToggle i {
-            position: absolute;
-            color: var(--text-color);
-            font-size: 22px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .dark-light i.sun {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .dark-light.active i.sun {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .dark-light.active i.moon {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchToggle i.cancel {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchToggle.active i.cancel {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .searchToggle.active i.search {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .searchBox {
-            position: relative;
-        }
-
-
-
-
-
-        body.dark .search-field input {
-            color: var(--text-color);
-        }
-
-        .search-field i {
-            position: absolute;
-            color: var(--nav-color);
-            right: 15px;
-            font-size: 22px;
-            cursor: pointer;
-        }
-
-        body.dark .search-field i {
-            color: var(--text-color);
-        }
-
-        @media (max-width: 790px) {
-            nav .nav-bar .sidebarOpen {
-                display: block;
-            }
-
-            .menu {
-                position: fixed;
-                height: 100%;
-                width: 320px;
-
-                left: -126%;
-                top: 0;
-                padding: 20px;
-                background-color: var(--side-nav);
-                z-index: 100;
-                transition: all 0.4s ease;
-            }
-
-            nav.active .menu {
-                left: -10%;
-            }
-
-            nav.active .nav-bar .logo a {
-                opacity: 0;
-                transition: all 0.3s ease;
-            }
-
-            .menu .logo-toggle {
-                display: block;
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
-
-            .logo-toggle .siderbarClose {
-                color: var(--text-color);
-                font-size: 24px;
-                cursor: pointer;
-            }
-
-            .nav-bar .nav-links {
-                flex-direction: column;
-                background-color: #18191A;
-                padding-top: 30px;
-            }
-
-            .nav-links li a {
-                display: block;
-                margin-top: 20px;
-            }
- p{
-   width: 100%;
-   
 }
 
-        }
-    </style> -->
+body.dark nav {
+border: 1px solid #393838;
+
+}
+
+nav .nav-bar {
+position: relative;
+height: 100%;
+
+max-width: 1000px;
+width: 100%;
+background-color: #9B6FA6;
+margin: 0 auto;
+padding: 0 20px;
+display: flex;
+
+border-radius: 4rem;
+align-items: center;
+justify-content: space-evenly;
+}
+
+nav .nav-bar .sidebarOpen {
+color: var(--text-color);
+font-size: 25px;
+padding: 5px;
+cursor: pointer;
+display: none;
+}
+
+nav .nav-bar .logo a {
+font-size: 20px;
+font-weight: 500;
+color: var(--text-color);
+text-decoration: none;
+}
+
+
+.menu .logo-toggle {
+display: none;
+}
+
+.nav-bar .nav-links {
+display: flex;
+align-items: center;
+/* gap: 2rem; */
+border-radius: 0  0 3rem 3rem  ;
+}
+
+.nav-bar .nav-links li {
+margin: 0 5px;
+
+list-style: none;
+}
+
+.nav-links li a {
+position: relative;
+font-size: 1.1rem;
+font-weight: 500;
+color: var(--text-color);
+text-decoration: none;
+padding: 10px;
+}
+
+.nav-links li a::before {
+content: '';
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+height: 6px;
+width: 6px;
+border-radius: 50%;
+background-color: var(--text-color);
+opacity: 0;
+transition: all 0.3s ease;
+}
+
+.nav-links li:hover a::before {
+opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox {
+display: flex;
+align-items: center;
+}
+
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchToggle {
+height: 40px;
+width: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 5px;
+}
+
+.dark-light i,
+.searchToggle i {
+position: absolute;
+color: var(--text-color);
+font-size: 22px;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 790px) {
+nav .nav-bar .sidebarOpen {
+    display: block;
+}
+
+nav{
+    margin-top: 9%;
+}
+.menu {
+    position: fixed;
+    height: 100%;
+    width: 99vw;
+border-radius: 4rem;
+    left:-10%;
+    top: 0;
+    padding: 20px;
+    background-color: var(--side-nav);
+    z-index: 100;
+    transition: all 0.4s ease;
+}
+
+nav.active .menu {
+    left:-10%;
+}
+
+.nav-bar .nav-links .active{
+    opacity: 0;
+}
+nav.active .nav-bar .logo a {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.menu .logo-toggle {
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-toggle .siderbarClose {
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-bar .nav-links {
+    flex-direction: column;
+    background-color:#9B6FA6;
+    
+}
+
+.nav-links li a {
+    display: block;
+    margin-top: 20px;
+}
+.divcontentnopad{
+    display: flex;
+    flex-direction: column;
+}
+.one-fourth h2{
+    width: 100vw;
+}
+.one-half{
+    width: 100vw;
+}
+.divlogolrg img{
+    width: 50%;
+    margin-left: 16%;
+}
+.formwrap{
+    margin-bottom: 4rem;
+}
+.form h2{
+  
+    margin-right: 2rem;
+    margin-top: 10%;
+}
+form input{
+    width: 65vw;
+}
+.form form{
+    margin-top: 2rem;
+}
+.formwrap h2{
+    padding-top: 2rem;
+}
+.feedback{
+margin-left: 0;
+margin-top: 2rem;
+margin-right: 9rem;
+}
+textarea{
+width: 64vw;
+}
+.formwrap input{
+width: 65vw;
+}
+.form{
+margin-top:3rem ;
+}
+.form input{
+    width: 65vw;
+}
+.cd__main{
+    margin-top: 240vh;
+}
+.cd__main h1{
+    margin:0 auto;
+    width: 100%;
+}
+ 
+ p{
+   width: 100%;
+ }
+ .four-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cardd {
+        width: 90%;
+        margin-bottom: 1rem;
+    }
+    .cardd h3{
+        width: 100%;
+    }
+    .cardd p{
+        width: 100%;
+    }
+}
+
+        
+    </style> 
 
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -528,8 +568,8 @@
           
             <div style=" display: flex;flex-direction: column; justify-content: center;align-items:center;margin-top: 
   5rem;">
-                <h1
-                    style=" text-align: center;border-bottom: 3px solid rgb(28, 133, 190);width: 60rem;margin: 4rem auto;margin-bottom: 1rem;">
+                <h1 class="dentaltreat"
+                    style=" text-align: center;border-bottom: 3px solid rgb(28, 133, 190);margin: 4rem auto;margin-bottom: 1rem;">
                     Dental treatments and services at Redditch Smile Care </h1>
                 <h3 style="text-align: center;">Top quality dentistry in a modern, friendly clinic</h3>
                 <p class="para" style=" @media (max-width: 790px){width: 90%;} font-weight: 500; width:50vw;margin: 1rem auto;">At Redditch Smile Care, we put our patients first and always

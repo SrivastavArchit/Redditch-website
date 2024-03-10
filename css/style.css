@@ -52,7 +52,7 @@ nav { font-size: .95em; color: #FFF; }
 
 address { font-style: normal; }
 
-.divbannercontent h2 { font-size: 3em; color: whitesmoke; line-height: 1.1em; margin-bottom: 15px; } 
+.divbannercontent h2 { font-size: 3rem; color: whitesmoke; line-height: 1.1em; margin-bottom: 15px; } 
 .divbannercontent h3 { font-size: 1.75em; color: white; line-height: 1.3em; margin-bottom: 25px; }
 
 .featured h2 { font-size: 1.2em; color: #1d2d86; margin-bottom: .25em; }
@@ -181,7 +181,9 @@ a.anchor { display: block; position: relative; top: -70px; visibility: hidden; }
 .desktophide { display: none; }
 
 .clearfix:after { content: ' '; display: block; clear: both; }
-
+.four-cards{
+    display: flex;  margin-top: 19rem ; height: 80vh; width: 100%;justify-content: space-around;
+}
 .divcontainer { float: left; width: 100%; }
 .divcontent { position: relative; max-width: 1100px; margin: auto; padding: 60px 20px; }
 .divcontentnopad { position: relative; max-width: 1100px; margin: auto; padding: 0 20px; }
@@ -413,6 +415,9 @@ and (max-width : 767px) {
   font-style: normal;
 
 }
+.cardd{
+    width: 100%;
+}
 .cd_main{
     margin-top: 290vh;
 }
@@ -444,18 +449,16 @@ html, body { font-size: 15px; }
 .desktophide { display: block; }
 
 .divcontent { max-width: 90%;height: 18vh; padding: 40px 5%; }
-.divcontentnopad { max-width: 90%; padding: 0 5%; }
+.divcontentnopad { max-width: 90%; padding: 0 5%; margin-top: 20vh;}
 .divcontentnarrow { max-width: 90%; padding: 0 5%; }
 .extrapadtop { padding-top: 30px; }
 .divcontent p {
   padding-top: 2rem;
 
 }
-h1{
-  width: 0rem;
-}
+
 .para p{
-  width: 0rem;
+  width: 60%;
   padding: 0 0;
   margin: 0 0 ;
 }
@@ -572,7 +575,7 @@ nav.active .nav-bar .logo a {
 
 .cqc { width: 270px; }
 
-.associations { margin: 30px 0; }
+.associations { margin: 30px 0;margin-top: 100vh; }
 .associations IMG { margin: 10px; }
 
 footer h2 { margin-top: 15px; }

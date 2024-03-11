@@ -379,6 +379,7 @@ button { cursor: pointer; margin: 0; font-family: "museo-sans",sans-serif;font-w
 @media only screen 
 and (min-width : 768px) 
 and (max-width : 1023px) {
+    
 
 /* ------------------------------------------------------------------------------------ */
 /* STRUCTURE */
@@ -950,6 +951,9 @@ body.dark .search-field i {
     }
     nav .nav-bar .sidebarOpen {
         display: block;
+    }
+    .divcontainer{
+        margin-bottom: 3rem;
     }
 
     .menu {

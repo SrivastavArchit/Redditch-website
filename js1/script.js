@@ -3,6 +3,7 @@ const body = document.querySelector("body"),
 nav = document.querySelector("nav"),
 navbar = document.querySelector(".nav-bar");
 menu = document.querySelector(".menu")
+navlinks=document.querySelector(".nav-links")
 modeToggle = document.querySelector(".dark-light"),
 searchToggle = document.querySelector(".searchToggle"),
 sidebarOpen = document.querySelector(".sidebarOpen"),
@@ -21,8 +22,9 @@ function hidemenu(){
 //   js code to toggle sidebar
 function toggleMenu() {
     if (window.innerWidth > 720) {
-        document.querySelector(".menu").style.display = "block";
-        nav.style.display="block"
+        menu.style.display = "block";
+        nav.classList.add("active");
+
         // Show menu on desktop screens
     } 
     else{
@@ -39,4 +41,5 @@ nav.classList.remove("active");
 document.querySelector(".menu").style.display = "none";
 
 });
-hidemenu()
+
+toggleMenu()

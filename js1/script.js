@@ -22,7 +22,7 @@ function hidemenu(){
 //   js code to toggle sidebar
 function toggleMenu() {
     if (window.innerWidth > 720) {
-        menu.style.display = "block";
+        document.querySelector(".menu").style.display = "block";
         nav.classList.add("active");
 
         // Show menu on desktop screens

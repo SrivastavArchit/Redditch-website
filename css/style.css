@@ -157,7 +157,8 @@ footer a:hover { color: #62BAEA; }
 .btn { margin: 0; font-weight: 300; }
 .btn a { display: inline-block; padding: 10px 30px; border: 1px solid rgb(45 44 44) ; color:rgb(45 44 44); text-align: center; border-radius: 12px;}
 
-.btn1 a { display: inline-block; padding: 10px 30px; border: 1px solid #62BAEA; text-align: center; color: #5b3066; } 
+.btn1 a { display: inline-block; padding: 10px 30px; border: 1px solid #62BAEA; text-align: center; color: #5b3066
+    ; } 
 .btn1 a:hover { color: #FFF; }
 
 /* Sweep To Top */
@@ -374,6 +375,7 @@ button { cursor: pointer; margin: 0; font-family: "museo-sans",sans-serif;font-w
 
 .nav-bar .nav-links{
     gap: 2rem;
+    margin-left: 4rem;
 
 }
 @media only screen 

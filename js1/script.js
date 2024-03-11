@@ -1,43 +1,42 @@
 // Selecting elements
-let menu = document.querySelector(".menu"),
-    sidebarOpen = document.querySelector(".sidebarOpen"),
-    sidebarClose = document.querySelector(".sidebarClose");
-
-// Function to hide the menu
-function hideMenu() {
-    menu.style.display = "none";
+const body = document.querySelector("body"),
+nav = document.querySelector("nav"),
+navbar = document.querySelector(".nav-bar");
+menu = document.querySelector(".menu")
+modeToggle = document.querySelector(".dark-light"),
+searchToggle = document.querySelector(".searchToggle"),
+sidebarOpen = document.querySelector(".sidebarOpen"),
+sidebarClose = document.querySelector(".siderbarClose"); // Corrected typo
+let getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark-mode") {
+body.classList.add("dark");
 }
 
-// Function to show the menu
-function showMenu() {
-    menu.style.display = "block";
+function hidemenu(){
+    nav.classList.remove("active");
+    document.querySelector(".menu").style.display = "none";
 }
 
-// Function to toggle menu based on screen width
+
+//   js code to toggle sidebar
 function toggleMenu() {
     if (window.innerWidth > 720) {
-        showMenu(); // Show menu on desktop screens
-    } else {
-        hideMenu(); // Hide menu on mobile screens
+        document.querySelector(".menu").style.display = "block";
+        nav.style.display="block"
+        // Show menu on desktop screens
+    } 
+    else{
+        document.querySelector(".menu").style.display = "none";
+        nav.classList.remove("active");
     }
 }
-
-// Initial toggle based on screen width
-toggleMenu();
-
-// Toggle sidebar functionality
 sidebarOpen.addEventListener("click", () => {
-    showMenu();
+nav.classList.add("active");
+document.querySelector(".menu").style.display = "block";
 });
+sidebarClose.addEventListener("click", () => { // Corrected typo
+nav.classList.remove("active");
+document.querySelector(".menu").style.display = "none";
 
-sidebarClose.addEventListener("click", () => {
-    hideMenu();
 });
-
-// Event listener to hide the menu when navigating to a new page
-window.addEventListener("beforeunload", () => {
-    hideMenu();
-});
-
-// Event listener for window resize to toggle menu
-window.addEventListener("resize", toggleMenu);
+hidemenu()

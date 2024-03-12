@@ -469,6 +469,7 @@ html, body { font-size: 15px; }
 .extrapadtop { padding-top: 30px; }
 .divcontent p {
   padding-top: 2rem;
+  
 
 }
 /* .divcontainer p{
@@ -631,7 +632,7 @@ table td:before { content: attr(data-label); float: left; font-weight: bold; }
 /* FORMS */
 /* ------------------------------------------------------------------------------------ */
 
-.formwrap { float: left; width: 115%; margin-left: -11%; background: url(../images/enquiry-form-bg.png) no-repeat; background-size: 106% 108%; }
+.formwrap { float: left; height: 600px; margin-left: -4%; background: url(../images/enquiry-form-bg.png) no-repeat; background-size: 106% 108%; }
 .form { float: left; width: 80%; padding: 62px 8% 28px 13%; }
 .form input { width: 94%; padding: 12px 3%; background: #EDEDED; border: 0; margin: 0 0 2px 0; } 
 .form textarea { width: 94%; height: 100px; overflow: auto; padding: 3%; background: #EDEDED; border: 0; margin: 0 0 15px 0; } 
@@ -960,7 +961,10 @@ body.dark .search-field i {
         font-size: 50px;
         margin-top: -17px;
     }
-   
+   nav{
+    width: 100vw;
+    border-radius: 0;
+   }
 
     .divlogo img{
         margin-top: -20vh;
@@ -978,10 +982,10 @@ body.dark .search-field i {
         height: 100%;
         width: 320px;
 
-        left:-10%;
+        left:-7%;
         top: 0;
         padding: 20px;
-        background-color: var(--side-nav);
+        background-color: #5b3066;
         z-index: 100;
         transition: all 0.4s ease;
     }

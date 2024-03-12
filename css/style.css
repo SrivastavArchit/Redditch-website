@@ -9,6 +9,8 @@
   text-align: center;
   width: 25;
 }
+
+
 html, body { width: 100%; font-size: 16px; font-family: "museo-sans",sans-serif; font-weight: 300; -moz-font-smoothing: antialiased; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: none; font-smoothing: antialiased; text-rendering: optimizeLegibility; overflow-x: hidden; }
 
 * { margin: 0; padding: 0; border: 0; }
@@ -127,7 +129,7 @@ a { color: #62BAEA; }
 a:hover { color: #808080; }
 
 nav li a { color: #FFF; }
-nav li a:hover { color: #716558; }
+nav li a:hover { color: #006aff; }
 
 /* .subnav li a { display: block; width: 94%; padding: 3%; background: #62BAEA; color: #FFF; margin-bottom: 1px; }
 .subnav li a:hover, .subnav li a.active { background: #EEE; color: #716558; margin-bottom: 1px; } */
@@ -412,6 +414,9 @@ nav { display: none; }
 @media only screen 
 and (min-width : 320px) 
 and (max-width : 767px) {
+    .logo-toggle .siderbarClose{
+        font-size: 50px;
+    }
 	
 /* .mobilehide { display: none; }
 .desktophide { display: block; } */
@@ -466,6 +471,9 @@ html, body { font-size: 15px; }
   padding-top: 2rem;
 
 }
+/* .divcontainer p{
+    margin: .8rem auto;
+} */
 
 .para p{
   width: 60%;
@@ -948,12 +956,18 @@ body.dark .search-field i {
 }
 
 @media (max-width: 790px) {
+    .logo-toggle .siderbarClose{
+        font-size: 50px;
+        margin-top: -17px;
+    }
+   
 
     .divlogo img{
         margin-top: -20vh;
     }
     nav .nav-bar .sidebarOpen {
         display: block;
+        font-size: 35px;
     }
     .divcontainer{
         margin-bottom: 3rem;
@@ -1006,7 +1020,7 @@ body.dark .search-field i {
 
     .nav-links li a {
         display: block;
-        margin-top: 20px;
+        margin-top: -10px;
     }
     .divcontentnopad{
         display: flex;

@@ -35,6 +35,7 @@ function toggleMenu() {
 sidebarOpen.addEventListener("click", () => {
 nav.classList.add("active");
 document.querySelector(".menu").style.display = "block";
+
 });
 sidebarClose.addEventListener("click", () => { // Corrected typo
 nav.classList.remove("active");

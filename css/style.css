@@ -422,7 +422,9 @@ and (max-width : 767px) {
     }
 	
 /* .mobilehide { display: none; }
-.desktophide { display: block; } */
+ */
+ .tabletshow {  
+margin-left: 85px;}
 .poppins-semibold {
   font-family: "Poppins", sans-serif;
   font-weight: 400;

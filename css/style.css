@@ -111,7 +111,12 @@ footer span { color: #d392c7; }
 :-moz-placeholder { /* Firefox 18- */
  color: #716558;
 }
-
+.rights{
+    text-align: center;
+    margin-top: 1rem;
+    color: #ffffff;
+    background-color: #716558;
+}
 .left { float: left; }
 .right { float: right; }
 .txtleft { text-align: left; }
@@ -985,9 +990,7 @@ body.dark .search-field i {
         display: block;
         font-size: 35px;
     }
-    .divcontainer{
-        margin-bottom: 3rem;
-    }
+    
 
     .menu {
         position: fixed;
@@ -1028,6 +1031,7 @@ body.dark .search-field i {
         cursor: pointer;
     }
 
+   
     .nav-bar .nav-links {
         flex-direction: column;
         background-color:#9B6FA6;

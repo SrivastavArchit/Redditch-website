@@ -1,4 +1,13 @@
 // Selecting elements
+
+
+
+; //notice that there's no semicolon!
+
+
+
+
+
 const body = document.querySelector("body"),
 nav = document.querySelector("nav"),
 navbar = document.querySelector(".nav-bar");
@@ -44,3 +53,10 @@ document.querySelector(".menu").style.display = "none";
 });
 
 toggleMenu()
+
+
+// var tl = gsap.timeline();
+// //sequenced one-after-the-other
+// gsap.from(".nav-links", { duration: 1.5, y: "-900",opacity:-1 })
+// gsap.from(".divlogo",{duration:1,y:"-700",opacity:-1})
+// gsap.from(".divbannercontent h2,.divbannercontent h3",{duration:2,opacity:-1});

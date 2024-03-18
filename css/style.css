@@ -126,9 +126,20 @@ footer span { color: #d392c7; }
 
 .CookieDeclarationDialogText { display: none; }
 
+@keyframes slide {
+    from{
+transform: translateX(0);
+    }
+    to{
+transform: translateX(-100%);
+    }
+    
+}
+
 /* ------------------------------------------------------------------------------------ */
 /* LINKS */
-/* ------------------------------------------------------------------------------------ */
+/* ----
+-------------------------------------------------------------------------------- */
 
 a { color: #62BAEA; }
 a:hover { color: #808080; }
@@ -257,8 +268,14 @@ header .divcontact { float: right; text-align: right; margin-top: 50px; }
 .cqc { display: block; width: 350px; margin: 30px auto 0; }
 
 
-.associations { margin: 30px 0; }
-.associations IMG { display: inline-block; margin: 0 10px; vertical-align: middle; }
+.associations {  display: inline-block; }
+.animation{
+   
+    display: inline-block;
+    white-space: nowrap;
+    animation:10s slide infinite linear;
+}
+.associations IMG { display: inline-block; margin: 0 40px; vertical-align: middle; }
 
 footer ul { list-style: none; margin: 0 0 1em 0; }
 .credits { padding: 30px 20px; text-align: center; }
@@ -305,7 +322,47 @@ footer ul { list-style: none; margin: 0 0 1em 0; }
 .entryimage IMG { width: 100%; height: auto; }
 .entryimage.medium IMG { width: 80%; height: auto; }
 .entryimage.small IMG { width: 50%; height: auto; }
-
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+  
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  
+  .logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+  
+  .logos-slide img {
+    height: 50px;
+    margin: 0 40px;
+  }
 /* ------------------------------------------------------------------------------------ */
 /* COLLAPSABLE DATA TABLE (FEES) */
 /* ------------------------------------------------------------------------------------ */
@@ -377,7 +434,9 @@ scale: 1.1;
 /* ------------------------------------------------------------------------------------ */
 
 .one-half, .one-third, .one-fourth, .two-thirds, .three-fourths, .full-width { display: inline-block; float: left; margin-right: 2%; min-height: 50px; }
-
+.one-half p{
+    margin-bottom: 16px;
+}
 .one-half { width: 49%; }
 .one-third { width: 32%; }
 .one-fourth { width: 23.5%; }
@@ -505,7 +564,10 @@ header { min-height: 110px;height: 30vh; }
 header .divlogo { float: left; width: 100%; text-align: center; margin: 20px 0 40px; }
 header .divlogo IMG { width: 260px; height: auto; margin-left: -25px; }
 
-.divcontact { position: absolute; top: 12px; left: 8px; float: none; text-align: left; margin-top: 0; }
+header .divcontact{
+    margin-top: -20vh;
+}
+/* .divcontact { position: absolute; top: 12px; left: 8px; float: none; text-align: left; margin-top: 0; } */
 nav .nav-bar .sidebarOpen {
     display: block;
 }
@@ -1103,5 +1165,171 @@ margin-right: 9rem;
   html, body { font-size: 15px; }
   .dentist img{
       height: 40vh;
+  }
+}
+
+.animation{
+   
+    display: inline-block;
+    white-space: nowrap;
+    animation:10s slide infinite linear;
+}
+.associations{
+   margin-top: 0rem; 
+}
+
+.dropdown button{
+   
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    font-family: 'Poppins';
+    background-color: #9B6FA6;
+}
+.dropdown a{
+    display: block;
+    color: rgb(255, 236, 236);
+    text-decoration: none;
+    padding: 10px 15px;
+   
+}
+.dropdown .content{
+    display: none;
+    position: absolute;
+    background-color: hsl(299, 19%, 46%);
+    min-width: 100px;
+    box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+}
+.dropdown:hover .content{
+    display: block;
+}
+.dropdown:hover button{
+   
+}
+.dropdown a:hover{
+    background-color: hsla(307, 17%, 71%, 0.742);
+}
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.ms-madi-regular {
+    font-family: "Ms Madi", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .reviewpara p{
+   font-weight: 600;
+   font-size: 2rem;
+   
+ margin-bottom: -3rem;
+    text-align: center;
+    font-family: cursive , '.ms-madi-regular';
+    color: #89878a;
+  }
+  .line{
+    width: 20%;
+    height: 4px;
+    background-color: #a6b5de;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+.container {
+    padding-top: -2rem;
+    margin: 0 auto;
+    
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.testimonial {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+}
+.testimonial .image {
+  height: 170px;
+  width: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.testimonial .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+.slide p {
+  text-align: center;
+  padding: 0 160px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+}
+.slide .quote-icon {
+  font-size: 30px;
+  color: #4070f4;
+}
+.slide .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.details .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+.details .job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+}
+/* swiper button css */
+.nav-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translateY(30px);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.nav-btn::after,
+.nav-btn::before {
+  font-size: 20px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.swiper-pagination-bullet-active {
+  background-color: #4070f4;
+}
+@media screen and (max-width: 768px) {
+  .slide p {
+    padding: 0 20px;
+  }
+  .nav-btn {
+    display: none;
   }
 }

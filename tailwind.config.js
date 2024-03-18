@@ -1,11 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,js}"],
+  content: [
+    "./src/**/*.{html,js}",
+    "./node_modules/tw-elements/js/**/*.js"
+  ],
   theme: {
     screens: {
       'sm': '320px'
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        msmadi: ['"ms-madi-regular"', ...defaultTheme.fontFamily.sans]
+      }
+    },
   },
-  plugins: [],
+  plugins: [require("tw-elements/plugin.cjs")],
+  darkMode: "class"
 }

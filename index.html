@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from www.
-    dental.uk/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Jan 2024 13:03:35 GMT -->
+
 
 <head>
 
@@ -52,28 +51,32 @@
     <link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png" />
+    <link rel="stylesheet" href="review.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Ms+Madi&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  
     <!-- CSS -->
    
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap"
         rel="stylesheet">
-    <script>document.include = function (e) { if ("undefined" == typeof e) return !1; var n, t; n = document.all ? new ActiveXObject("Microsoft.XMLHTTP") : new XMLHttpRequest, t = Math.random().toString().substring(2), e = e.indexOf("?") > -1 ? e + "&rnd=" + t : e + "?rnd=" + t, n.open("GET.html", e, !1), n.send(null), document.write(n.responseText) };</script>
 
-    <!-- Google Tag Manager -->
-    <!-- <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    '../www.googletagmanager.com/gtm5445.html?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5JN4Q4X');</script> -->
-    <!-- End Google Tag Manager -->
     <style>
+        .container{
+            background-color: rgb(255, 255, 255);
+        }
 .whyus{
     background-image: url(images/repeated-square.png);
 }
@@ -91,6 +94,9 @@
     margin-top: 1rem;
     color: #1b151a;
    
+}
+.associations{
+    margin-bottom: 20px;
 }
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
@@ -166,6 +172,8 @@
   position: relative;
   top: .2em;
 }
+
+
 
 .card__name{
   color: var(--color);
@@ -348,10 +356,17 @@
       
 
         @media (max-width: 790px) {
+            
+           header .divcontact a{
+          margin-top: 0;
+           }
             .divlogo img{
                 width: 70px;
             }
-
+#scroller2{
+    display: none;
+    margin-top: 2rem;
+}
             .featured p,.featured h2{
                 text-align: center;
                 margin: 0 auto;
@@ -478,6 +493,7 @@ margin-right: 9rem;
             }
             .associations{
                 margin-top: 0;
+                display: inline-block;
             }
             .divlogo img{
                 margin-top: -20vh;
@@ -492,10 +508,11 @@ margin-right: 9rem;
     nav .nav-bar .sidebarOpen {
         font-size: 35px;
     }
+    #hide{
+        display: none;
+    }
         } 
     </style>
-    <script id="Cookiebot" src="../consent.cookiebot.com/uc.js" data-cbid="85e47439-5866-4036-8a7b-217bd687343e"
-        type="text/javascript" async></script>
   
 
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -507,20 +524,7 @@ margin-right: 9rem;
 
 <body>
 
-    <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JN4Q4X" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript> -->
-    <!-- End Google Tag Manager (noscript) -->
-
-
-    <!-- <div class="divcontact">
-        <span class="desktophide tabletshow"><a href="tel:020-8858-1055">Call</a> | <a
-                href="mailto:info@
-                dental.uk">Email</a> | <a
-                href="contact-
-                -dental-practice.html#enquiry">Appointments</a></span>
-    </div> -->
-
+   
     <header>
         <div class="divcontentnopad">
 
@@ -529,10 +533,9 @@ margin-right: 9rem;
             </div>
 
             <div class="divcontact">
-                <span class="mobilehide tablethide"><a href="tel:020-8858-1055">015 2763 049</a> | <a
-                        href="mailto:info@redditchsmilecare.co.uk">Send us an email</a> | <a
-                        href="contact-
-                        -dental-practice.html#enquiry">Book an appointment</a></span>
+                <span class=""><a href="tel:015-2763-049">015 2763 049</a><span id="hide">|</span> 
+                     <a id="hide"  href="mailto:info@redditchsmilecare.co.uk">Send us an email</a><span id="hide">| </span> 
+                        <a id="hide" href="contact.html#enquiry">Book an appointment</a></span>
             </div>
 
             <!-- Main Nav -->
@@ -556,7 +559,16 @@ margin-right: 9rem;
 
                             
                             <li> <a href="contact.html">Contact us</a></li>
+                            <div class="dropdown">
+                                <button>Prices</button>
+                                <div class="content">
+                                    <a href="-dentist-nhs-fees.html">NHS Fee</a>
+                                    <a href="-dentist-private-fees.html">Private Fee</a>
+                                   
+                                </div>
+                            </div>
                         </ul>
+                   
                     </div>
 
                     <div class="searchBox">
@@ -875,14 +887,117 @@ margin-right: 9rem;
         </div>
     </div>
     </div>
-    
+    <!-- review section start -->
+    <div class="reviewpara flex-col">
+        <p >What Our Customers Say</p>
+        <div class="w-[40%] h-[3px] bg-green-100 line"></div>
+    </div>
+   
+   
+    <section class="container">
 
-
+      
+        <div class="testimonial mySwiperr">
+          <div class="testi-content swiper-wrapper">
+            <div class="slide swiper-slide">
+              <img src="images/usericon.png" alt="" class="image" />
+              <p>
+                Wow. Absolutely fantastic place. I was terrified of dentists ( not been for 10 years) but due to a
+                recurring abscess I had to pluck up the courage to go to have 2 teeth removed. Staff were so
+                understanding and compassionate. They were fine with me bringing someone with me to hold my
+                hand. The whole process was painless and quick. You have restored my faith in dentists and I won&#39;t
+                be scared to have regular checkups in future. Thank you all and I will be seeing you in 3 months for
+                my follow up              </p>
+              <i class="bx bxs-quote-alt-left quote-icon"></i>
+              <div class="details">
+                <span class="name">Connor Gray</span>
+                <span class="job">Google review</span>
+              </div>
+            </div>
+            <div class="slide swiper-slide">
+              <img src="images/usericon.png" alt="" class="image" />
+              <p>
+                Redditch Smile Care has always been of the highest standards in cleanliness, booking time and
+                appointment time. Friendly staff, the dentist has always explained my treatment in a clear manner,
+                so that I can make good judgments. I highly recommend this practice to anyone looking for a dental
+                practitioner.              </p>
+              <i class="bx bxs-quote-alt-left quote-icon"></i>
+              <div class="details">
+                <span class="name">James Norbury</span>
+                <span class="job">Google review</span>
+              </div>
+            </div>
+            <div class="slide swiper-slide">
+              <img src="images/usericon.png" alt="" class="image" />
+              <p>
+                Very happy with the service provided so far. I had an urgent case and the team were very
+                sympathetic and assisted me at very short notice.
+                I have ongoing treatment and they have given me the confidence that my future appointments will be
+                dealt with professionally. I highly recommend you consider this practice for future treatments.              </p>
+              <i class="bx bxs-quote-alt-left quote-icon"></i>
+              <div class="details">
+                <span class="name">Colin Banks</span>
+                <span class="job">Google review</span>
+              </div>
+            </div>
+            <div class="slide swiper-slide">
+                <img src="images/usericon.png" alt="" class="image" />
+                <p>
+                    I am pretty terrified of the dentist, but my dentist here is amazing. She talks me through all of my
+                    treatment so I understand what is going to happen before it happens and she always let&#39;s me know
+                    that I am in control of my treatment plan. I would highly recommend going here. 
+                    <br> <br>
+                    <i class="bx bxs-quote-alt-left quote-icon"></i>            
+                <div class="details">
+                  <span class="name">Denise Seddon</span>
+                  <span class="job">Google review</span>
+                </div>
+              </div>
+              <div class="slide swiper-slide">
+                <img src="images/usericon.png" alt="" class="image" />
+                <p>
+                    Not a fan of dentists but went for first treatment tonight (tonight is correct as they offer
+                    appointments up to 8pm, fantastic for us workers) and a great service all on NHS. Would
+                    recommend them to anyone.           
+                    <br> <br> <i class="bx bxs-quote-alt-left quote-icon"></i>    <div class="details">
+                  <span class="name">Clive Proctor</span>
+                  <span class="job">Google review</span>
+                </div>
+              </div>
+              <div class="slide swiper-slide">
+                <img src="images/usericon.png" alt="" class="image" />
+                <p>
+                    Very professional. Very delighted with the treatment and results. Cant recommend enough. Friendly staff. 
+                    
+                    <br><br>
+                    <i class="bx bxs-quote-alt-left quote-icon"></i>               <div class="details">
+                  <span class="name">Urvashi Punn</span>
+                  <span class="job">Google review</span>
+                </div>
+              </div>
+              
+          </div>
+          <div class="swiper-button-next nav-btn"></div>
+          <div class="swiper-button-prev nav-btn"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
     <!-- ASSOCIATIONS -->
     <div class="divcontainer">
-        <div class="divcontentnopad txtcenter clearfix">
+        <div class="divcontentnopad txtcenter clearfix logos">
 
-            <div class="associations">
+            <div class="associations logos-slides animation" id="scroller2">
+                <img src="images/logos/nhs-logo.jpg" alt="NHS dentist near me Logo" width="70" height="auto">
+                <img src="images/logos/cqc-logo.jpg" alt="CQC Logo" width="105" height="auto">
+                <!-- <img src="images/logos/bda-logo.jpg" alt="BDA Logo" width="65" height="auto"> -->
+                <img src="images/logos/gdc-logo.jpg" alt="GDC Logo" width="140" height="auto">
+                <!-- <img src="images/logos/bos-logo.jpg" alt="BOS Logo" width="70" height="auto">
+                <img src="images/logos/enlighten-logo.jpg" alt="Enlighten logo" width="95" height="auto">
+                <img src="images/logos/invisalign-logo.jpg" alt="Invisalign logo" width="135" height="auto">
+                <img src="images/logos/tabeo-logo.jpg" alt="Tabeo Logo" width="110" height="auto"> -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO3jZLozsODYTwKhiagOO-e4slnGgo8rBKIg&usqp=CAU" width="105" height="auto" alt="32co">
+            </div>
+            <div class="associations logos-slides animation" >
                 <img src="images/logos/nhs-logo.jpg" alt="NHS dentist near me Logo" width="70" height="auto">
                 <img src="images/logos/cqc-logo.jpg" alt="CQC Logo" width="105" height="auto">
                 <!-- <img src="images/logos/bda-logo.jpg" alt="BDA Logo" width="65" height="auto"> -->
@@ -896,6 +1011,7 @@ margin-right: 9rem;
 
         </div>
     </div>
+
 
 
     <!-- Footer -->
@@ -1036,29 +1152,33 @@ margin-right: 9rem;
         },
       });
     </script>
-    <!-- <script>
-
-    function SendEmail(){
-        Email.send({
-    Host : "smtp.gmail.com",
-    Username : "architpulkit2003@gmail.com",
-    Password : "Archit@IT2026",
-    To : 'architsrivastava2026@gmail.com',
-    From : document.getElementById("Email-Address").value,
-    Subject : "new contact form",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
-
-    }
-</script> -->
+    <script>
+         var swiper = new Swiper(".mySwiperr", {
+  slidesPerView: 1,
+  grabCursor: true,
+  loop: true,
+  autoplay:{
+    delay:2000,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
+    </script>
+     
     <script src="./js1/script.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js'></script>
+  
+    <script type="text/javascript"src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+   
 </body>
 
-<!-- Mirrored from www.
-    dental.uk/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 14 Jan 2024 13:03:55 GMT -->
+
 
 </html>
